@@ -113,18 +113,18 @@
 
 
 
-<meta name="description" content="步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows   ulimit -Hn">
+<meta name="description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How can I increase open files limit">
 <meta property="og:url" content="http://yoursite.com/2017/09/07/How-can-I-increase-open-files-limit/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows   ulimit -Hn">
+<meta property="og:description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T15:41:52.648Z">
+<meta property="og:updated_time" content="2017-09-07T15:46:08.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How can I increase open files limit">
-<meta name="twitter:description" content="步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows   ulimit -Hn">
+<meta name="twitter:description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 
 
 
@@ -420,45 +420,42 @@
 
       
         <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li>Use the following command command to display maximum number of open file descriptors</li>
-</ol>
+<li><p>Use the following command command to display maximum number of open file descriptors</p>
 <blockquote>
 <p>cat /proc/sys/fs/file-max</p>
 <p>6508886</p>
 </blockquote>
-<ol>
-<li>To see the hard and soft values, issue the command as follows</li>
-</ol>
+</li>
+<li><p>To see the hard and soft values, issue the command as follows</p>
 <blockquote>
 <p>ulimit -Hn</p>
 <p>4096</p>
 <p>ulimit -Sn</p>
 <p>1024</p>
 </blockquote>
-<ol>
-<li>open the sysctl.conf and add this line  <code>fs.file-max = 65536</code> 65536 can be other number.</li>
-</ol>
+</li>
+<li><p>open the sysctl.conf and add this line <code>fs.file-max = 65536</code>, 65536 can be other number.</p>
 <blockquote>
 <p>vi /etc/sysctl.conf</p>
 </blockquote>
-<p>add new line:</p>
+<p> add new line:</p>
 <blockquote>
 <p>fs.file-max = 65536</p>
 </blockquote>
-<ol>
-<li>modify /etc/security/limits.conf according to  <a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></li>
-</ol>
-<p>add user limit configuration, for example, for user cold:</p>
+</li>
+<li><p>modify /etc/security/limits.conf according to <a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></p>
+<p> add user limit configuration, for example, for user cold:</p>
 <blockquote>
 <p>vi /etc/security/limits.conf</p>
 </blockquote>
-<p>add new line:</p>
+<p> add new line:</p>
 <blockquote>
 <p>cold - nofile 500000</p>
 <p>500000 should be lower than file-max</p>
 </blockquote>
-<ol>
-<li>exit user and relogin</li>
+</li>
+<li><p>exit user and relogin</p>
+</li>
 </ol>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://unix.stackexchange.com/questions/8945/how-can-i-increase-open-files-limit-for-all-processes" target="_blank" rel="external">How can I increase open files limit for all processes?</a></p>
 <p><a href="https://www.cyberciti.biz/faq/linux-increase-the-maximum-number-of-open-files/" target="_blank" rel="external">Linux Increase The Maximum Number Of Open Files / File Descriptors</a></p>
