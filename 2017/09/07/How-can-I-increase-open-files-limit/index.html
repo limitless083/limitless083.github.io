@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="后台, 算法, 运维, Erlang, Java, Linux" />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -113,17 +113,18 @@
 
 
 
-<meta name="description" content="学而不思则罔，思而不学则殆。">
+<meta name="description" content="How can I increase open files limit步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/2017/09/06/categories-1/index.html">
+<meta property="og:title" content="How can I increase open files limit">
+<meta property="og:url" content="http://yoursite.com/2017/09/07/How-can-I-increase-open-files-limit/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="学而不思则罔，思而不学则殆。">
+<meta property="og:description" content="How can I increase open files limit步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T15:02:04.128Z">
+<meta property="og:updated_time" content="2017-09-07T15:37:12.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="学而不思则罔，思而不学则殆。">
+<meta name="twitter:title" content="How can I increase open files limit">
+<meta name="twitter:description" content="How can I increase open files limit步骤 Use the following command command to display maximum number of open file descriptors   cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue">
 
 
 
@@ -153,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/06/categories-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/07/How-can-I-increase-open-files-limit/"/>
 
 
 
 
 
-  <title>categories | limitless blog</title>
+  <title>How can I increase open files limit | limitless blog</title>
   
 
 
@@ -340,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/categories-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/How-can-I-increase-open-files-limit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -357,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">categories</h1>
+          <h1 class="post-title" itemprop="name headline">How can I increase open files limit</h1>
         
 
         <div class="post-meta">
@@ -369,8 +370,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T23:02:04+08:00">
-                2017-09-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T23:27:33+08:00">
+                2017-09-07
               </time>
             
 
@@ -387,7 +388,7 @@
 
           
           
-             <span id="/2017/09/06/categories-1/" class="leancloud_visitors" data-flag-title="categories">
+             <span id="/2017/09/07/How-can-I-increase-open-files-limit/" class="leancloud_visitors" data-flag-title="How can I increase open files limit">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,7 +419,53 @@
       
 
       
-        
+        <h2 id="How-can-I-increase-open-files-limit"><a href="#How-can-I-increase-open-files-limit" class="headerlink" title="How can I increase open files limit"></a>How can I increase open files limit</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>Use the following command command to display maximum number of open file descriptors</li>
+</ol>
+<blockquote>
+<p>cat /proc/sys/fs/file-max</p>
+<p>6508886</p>
+</blockquote>
+<ol>
+<li>To see the hard and soft values, issue the command as follows</li>
+</ol>
+<blockquote>
+<p>ulimit -Hn</p>
+<p>4096</p>
+<p>ulimit -Sn</p>
+<p>1024</p>
+</blockquote>
+<ol>
+<li>open the sysctl.conf and add this line  <code>fs.file-max = 65536</code> 65536 can be other number.</li>
+</ol>
+<blockquote>
+<p>vi /etc/sysctl.conf</p>
+</blockquote>
+<p>add new line:</p>
+<blockquote>
+<p>fs.file-max = 65536</p>
+</blockquote>
+<ol>
+<li>modify /etc/security/limits.conf according to  <a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></li>
+</ol>
+<p>add user limit configuration, for example, for user cold:</p>
+<blockquote>
+<p>vi /etc/security/limits.conf</p>
+</blockquote>
+<p>add new line:</p>
+<blockquote>
+<p>cold - nofile 500000</p>
+<p>500000 should be lower than file-max</p>
+</blockquote>
+<ol>
+<li>exit user and relogin</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://unix.stackexchange.com/questions/8945/how-can-i-increase-open-files-limit-for-all-processes" target="_blank" rel="external">How can I increase open files limit for all processes?</a></p>
+<p><a href="https://www.cyberciti.biz/faq/linux-increase-the-maximum-number-of-open-files/" target="_blank" rel="external">Linux Increase The Maximum Number Of Open Files / File Descriptors</a></p>
+<p><a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></p>
+<p><a href="http://stackoverflow.com/questions/1212925/on-linux-set-maximum-open-files-to-unlimited-possible" target="_blank" rel="external">On Linux - set maximum open files to unlimited. Possible?</a></p>
+<p>os:cmd spawn too many process will raise badarg error, this might be the limit of open files because os:cmd will open port.</p>
+
       
     </div>
     
@@ -462,6 +509,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
 
       
       
@@ -471,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/06/archives/" rel="next" title="archives">
-                <i class="fa fa-chevron-left"></i> archives
+              <a href="/2017/09/06/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -533,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">limitless083</p>
@@ -548,7 +610,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -556,6 +618,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -591,6 +662,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-I-increase-open-files-limit"><span class="nav-number">1.</span> <span class="nav-text">How can I increase open files limit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
