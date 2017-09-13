@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 来自: http://man.linuxde.net/grep. xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 fi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T09:04:29.704Z">
+<meta property="og:updated_time" content="2017-09-13T09:09:39.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令:find, grep和xargs的爱恨情仇">
 <meta name="twitter:description" content="find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 来自: http://man.linuxde.net/grep. xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 fi">
@@ -385,7 +385,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-13T17:04:29+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-13T17:09:39+08:00">
                 2017-09-13
               </time>
             
@@ -436,68 +436,60 @@
 <p>xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。</p>
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>find的常见用法：</p>
 <ul>
-<li>列出当前目录及子目录下所有文件和文件夹</li>
-</ul>
+<li><p>列出当前目录及子目录下所有文件和文件夹</p>
 <blockquote>
 <p>find .</p>
 </blockquote>
-<ul>
-<li>在”/home”目录下查找以<code>.txt</code>结尾的文件</li>
-</ul>
+</li>
+<li><p>在”/home”目录下查找以<code>.txt</code>结尾的文件</p>
 <blockquote>
 <p>find /home -name “*.txt”</p>
 </blockquote>
-<ul>
-<li>在”/home”目录下查找不是以<code>.txt</code>结尾的文件</li>
-</ul>
+</li>
+<li><p>在”/home”目录下查找不是以<code>.txt</code>结尾的文件</p>
 <blockquote>
 <p>find /home ! -name “*.txt”</p>
 </blockquote>
-<ul>
-<li>根据文件类型查找</li>
-</ul>
+</li>
+<li><p>根据文件类型查找</p>
 <blockquote>
 <p>find . -type 类型参数</p>
 <p>类型参数有:</p>
 <p>f 普通文件<br>l 符号链接<br>d 目录<br>c 字符设备<br>b 块设备<br>s 套接字<br>p fifo</p>
 </blockquote>
-<ul>
-<li>根据文件大小进行匹配, 搜索大于10k的文件</li>
-</ul>
+</li>
+<li><p>根据文件大小进行匹配, 搜索大于10k的文件</p>
 <blockquote>
 <p>find . -type f -size +10k</p>
 </blockquote>
-<ul>
-<li>根据权限进行匹配</li>
-</ul>
+</li>
+<li><p>根据权限进行匹配</p>
 <blockquote>
 <p>find . -type f -perm 777</p>
 </blockquote>
-<ul>
-<li>查找所有空文件</li>
-</ul>
+</li>
+<li><p>查找所有空文件</p>
 <blockquote>
 <p>find . -empty</p>
 </blockquote>
+</li>
+</ul>
 <p>其他的详细的可以参考<code>man find</code></p>
 <h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>grep的常见用法：</p>
 <ul>
-<li>在文件中搜索一个单词，命令会返回一个包含”match_pattern”的文本行</li>
-</ul>
+<li><p>在文件中搜索一个单词，命令会返回一个包含”match_pattern”的文本行</p>
 <blockquote>
 <p>grep “match_pattern” file</p>
 <p>等同于</p>
 <p>cat file | grep “match_pattern”</p>
 </blockquote>
-<ul>
-<li>递归搜索文件</li>
-</ul>
+</li>
+<li><p>递归搜索文件</p>
 <blockquote>
 <p>grep “text” . -r</p>
 </blockquote>
-<ul>
-<li>在grep搜索结果中包括或者排除指定文件</li>
-</ul>
+</li>
+<li><p>在grep搜索结果中包括或者排除指定文件</p>
 <blockquote>
 <p>只在目录中所有的.php和.html文件中递归搜索字符”main()”</p>
 <p>grep “main()” . -r –include *.{php,html}</p>
@@ -505,17 +497,17 @@
 <p>在搜索结果中排除filelist文件列表里的文件</p>
 <p>grep “main()” . -r –exclude-from filelist</p>
 </blockquote>
-<ul>
-<li>显示匹配某个结果的之前或之后的行，<code>-A</code>(after),<code>-B</code>(before),<code>-C</code>(context)</li>
-</ul>
+</li>
+<li><p>显示匹配某个结果的之前或之后的行，<code>-A</code>(after),<code>-B</code>(before),<code>-C</code>(context)</p>
 <blockquote>
 <p>cat file | grep “haha” -A 3</p>
 </blockquote>
+</li>
+</ul>
 <p>其他的详细的可以参考<code>man grep</code></p>
 <h2 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h2><p>xargs的常见用法:</p>
 <ul>
-<li>xargs用作替换工具，读取输入数据重新格式化后输出</li>
-</ul>
+<li><p>xargs用作替换工具，读取输入数据重新格式化后输出</p>
 <blockquote>
 <p>cat test.txt</p>
 <p>输出：</p>
@@ -525,13 +517,13 @@
 <p>输出：</p>
 <p>a b c d e f</p>
 </blockquote>
-<ul>
-<li><p>删除最近的5个文件<br>&gt;</p>
+</li>
+<li><p>删除最近的5个文件</p>
 <blockquote>
 <p>ls -t | head -5 | xargs rm -rf</p>
 </blockquote>
 </li>
-<li><p>统计一个源代码目录中所有erlang文件的行数:<br>&gt;</p>
+<li><p>统计一个源代码目录中所有erlang文件的行数:</p>
 <blockquote>
 <p>find . -type f -name “*.erl” | xargs wc -l</p>
 </blockquote>
