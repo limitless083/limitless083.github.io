@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo中如何插入图片]]></title>
+    <url>%2F2017%2F09%2F21%2FHexo%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
+    <content type="text"><![CDATA[Hexo有多种方式插入图片，以下讲解其中三种方式。 一、通过Markdown语法引用将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 ![](/images/example.jpg) 即可。 这种方法针对的是在hexo整个项目中有少量的图片的情况，且 _config.yml 中 post_asset_folder 必须为 false 才能引用。 二、通过标签插件引用在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。 设置_config.yml 中 post_asset_folder 为 true 可以使每一次hexo new post postname都创建一个postname的文件夹和postname.md的文件。 把图片 example.jpg 放到postname文件夹中，然后在md文件里使用下面方式引用： {% asset_img example.jpg This is an example image %} 三、CDN引用将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。 图片测试： 参考: Hexo官方文档-Asset资源文件夹]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[GitHub+Hexo搭建博客]]></title>
     <url>%2F2017%2F09%2F20%2FGitHub%2BHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[一、创建github page在github.com上新建repository，repository的名字是 username.github.io ，比如我在github上的用户名是limitless083，因此新建的repository名字为 limistless083.github.io 二、安装Hexo的依赖Hexo依赖下列应用程序： Git Node.js Git 用来将生成的网页部署到github上。 Node 则用来生成网页。 三、安装Hexo执行以下命令即可 $ npm install -g hexo-cli 前三部分参考: Hexo官方安装文档 四、部署Hexo应用在自己创建的文件夹比如my_blog文件夹内用命令行执行以下命令 123hexo init # 初始化hexo新项目npm install # 安装依赖npm install hexo-deployer-git --save # 安装git依赖 更新_config.yml中配置，修改为： 123deploy:- type: git repo: git@github.com:limitless083/limitless083.github.io.git 清空旧文件: hexo clean部署：hexo deploy 本部分可以参考: Hexo官方部署文档 五、更改主题hexo 主题有很多，其中最出名的是NexT主题，该主题有详细的文档设置，可以参考NexT官方文档 结语以上就是一些大概的流程介绍，Hexo官方文档和NexT官方文档解释的都比较详细，在此就不再赘述了。]]></content>
