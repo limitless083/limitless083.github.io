@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Hexo中如何插入图片]]></title>
-    <url>%2F2017%2F09%2F21%2FHexo%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
+    <url>%2FHexo%E4%B8%AD%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
     <content type="text"><![CDATA[Hexo有多种方式插入图片，以下讲解其中三种方式。 一、通过Markdown语法引用将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 ![](/images/example.jpg) 即可。 这种方法针对的是在hexo整个项目中有少量的图片的情况，且 _config.yml 中 post_asset_folder 必须为 false 才能引用。 二、通过标签插件引用在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。 设置_config.yml 中 post_asset_folder 为 true 可以使每一次hexo new post postname都创建一个postname的文件夹和postname.md的文件。 把图片 example.jpg 放到postname文件夹中，然后在md文件里使用下面方式引用： {% asset_img example.jpg This is an example image %} 三、CDN引用将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。 图片测试： 参考: Hexo官方文档-Asset资源文件夹]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -10,7 +10,7 @@
   </entry>
   <entry>
     <title><![CDATA[GitHub+Hexo搭建博客]]></title>
-    <url>%2F2017%2F09%2F20%2FGitHub%2BHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <url>%2FGitHub%2BHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[一、创建github page在github.com上新建repository，repository的名字是 username.github.io ，比如我在github上的用户名是limitless083，因此新建的repository名字为 limistless083.github.io 二、安装Hexo的依赖Hexo依赖下列应用程序： Git Node.js Git 用来将生成的网页部署到github上。 Node 则用来生成网页。 三、安装Hexo执行以下命令即可 $ npm install -g hexo-cli 前三部分参考: Hexo官方安装文档 四、部署Hexo应用在自己创建的文件夹比如my_blog文件夹内用命令行执行以下命令 123hexo init # 初始化hexo新项目npm install # 安装依赖npm install hexo-deployer-git --save # 安装git依赖 更新_config.yml中配置，修改为： 123deploy:- type: git repo: git@github.com:limitless083/limitless083.github.io.git 清空旧文件: hexo clean部署：hexo deploy 本部分可以参考: Hexo官方部署文档 五、更改主题hexo 主题有很多，其中最出名的是NexT主题，该主题有详细的文档设置，可以参考NexT官方文档 结语以上就是一些大概的流程介绍，Hexo官方文档和NexT官方文档解释的都比较详细，在此就不再赘述了。]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -18,7 +18,7 @@
   </entry>
   <entry>
     <title><![CDATA[执行inotifywait过程出现upper limit on inotify watches reached的解决方式]]></title>
-    <url>%2F2017%2F09%2F20%2F%E6%89%A7%E8%A1%8Cinotifywait%E8%BF%87%E7%A8%8B%E5%87%BA%E7%8E%B0upper%20limit%20on%20inotify%20watches%20reached%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F%2F</url>
+    <url>%2F%E6%89%A7%E8%A1%8Cinotifywait%E8%BF%87%E7%A8%8B%E5%87%BA%E7%8E%B0upper%20limit%20on%20inotify%20watches%20reached%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached 解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。 解决步骤 检查一下inotify watches的最大值 1cat /proc/sys/fs/inotify/max_user_watches 设置inotify watches(以root权限) 12345678# 临时的sysctl fs.inotify.max_user_watches=81960# 永久的vi /etc/sysctl.conf添加 fs.inotify.max_user_watches=81960# 重新加载sysctl配置sysctl -p 相关知识sysctlsysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中 常见用法: sysctl -a 列出所有可读变量 sysctl variable=value 设置指定变量(临时的,若要永久的可以更改/etc/sysctl.conf文件) sysctl -p 从配置文件“/etc/sysctl.conf”加载内核参数设置 参考：Linux命令大全-sysctl命令 inotifyInotify为Linux提供了一套高效监控和跟踪文件变化的机制，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化，它采用的是事件驱动机制，不是轮询机制。 在Linux中提供了inotify-tools，该工具包含了两个命令inotifywait和inotifywatch,分别用来收集有关文件访问信息和关于被监视的文件系统的统计信息。 常见用法： inotifywait -mrq --timefmt &#39;%d/%m/%y/%H:%M&#39; --format &#39;%T %w %f&#39; -e create /dir 监听目录创建文件的事件。 参考: Linux命令大全-inotifywait Inotify: Efficient, Real-Time Linux File System Event Monitoring rsyncrsync是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件。它使用所谓的“Rsync演算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。所以通常可以作为备份工具来使用。 rsync的不足之处：rsync同步数据时，需要扫描所有文件后进行比对，进行差量传输。如果文件数量达到了百万甚至千万量级，扫描所有文件将是非常耗时的。因此常常使用rsync+inotify组合来实时同步数据。 常见用法: rsync -a /data /backup 从/data目录同步文件到/backup目录 rsync -v rsync://192.168.78.192/www 列远程机的文件列表。 参考: Linux命令大全-rsync]]></content>
       <tags>
         <tag>Linux</tag>
@@ -26,12 +26,12 @@
   </entry>
   <entry>
     <title><![CDATA[Linux命令:find, grep和xargs的爱恨情仇]]></title>
-    <url>%2F2017%2F09%2F13%2FLinux%E5%91%BD%E4%BB%A4-find%2C%20grep%E5%92%8Cxargs%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87%2F</url>
+    <url>%2FLinux%E5%91%BD%E4%BB%A4-find%2C%20grep%E5%92%8Cxargs%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87%2F</url>
     <content type="text"><![CDATA[find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 findfind的常见用法： 列出当前目录及子目录下所有文件和文件夹 find . 在”/home”目录下查找以.txt结尾的文件 find /home -name “*.txt” 在”/home”目录下查找不是以.txt结尾的文件 find /home ! -name “*.txt” 根据文件类型查找 find . -type 类型参数 类型参数有: f 普通文件l 符号链接d 目录c 字符设备b 块设备s 套接字p fifo 根据文件大小进行匹配, 搜索大于10k的文件 find . -type f -size +10k 根据权限进行匹配 find . -type f -perm 777 查找所有空文件 find . -empty 其他的详细的可以参考man find grepgrep的常见用法： 在文件中搜索一个单词，命令会返回一个包含”match_pattern”的文本行 grep “match_pattern” file 等同于 cat file | grep “match_pattern” 递归搜索文件 grep “text” . -r 在grep搜索结果中包括或者排除指定文件 只在目录中所有的.php和.html文件中递归搜索字符”main()” grep “main()” . -r –include *.{php,html} 在搜索结果中排除所有README文件grep “main()” . -r –exclude “README” 在搜索结果中排除filelist文件列表里的文件 grep “main()” . -r –exclude-from filelist 显示匹配某个结果的之前或之后的行，-A(after),-B(before),-C(context) cat file | grep “haha” -A 3 其他的详细的可以参考man grep xargsxargs的常见用法: xargs用作替换工具，读取输入数据重新格式化后输出 cat test.txt 输出： a b c d e f cat test.txt | xargs 输出： a b c d e f 删除最近的5个文件 ls -t | head -5 | xargs rm -rf 统计一个源代码目录中所有erlang文件的行数: find . -type f -name “*.erl” | xargs wc -l 其他的详细的可以参考man xargs]]></content>
   </entry>
   <entry>
     <title><![CDATA[How can I increase open files limit]]></title>
-    <url>%2F2017%2F09%2F07%2FHow-can-I-increase-open-files-limit%2F</url>
+    <url>%2FHow-can-I-increase-open-files-limit%2F</url>
     <content type="text"><![CDATA[步骤 Use the following command command to display maximum number of open file descriptors cat /proc/sys/fs/file-max 6508886 To see the hard and soft values, issue the command as follows ulimit -Hn 4096 ulimit -Sn 1024 open the sysctl.conf and add this line fs.file-max = 65536, 65536 can be other number. vi /etc/sysctl.conf add new line: fs.file-max = 65536 modify /etc/security/limits.conf according to limits.conf man-page add user limit configuration, for example, for user cold: vi /etc/security/limits.conf add new line: cold - nofile 500000 500000 should be lower than file-max exit user and relogin 参考How can I increase open files limit for all processes? Linux Increase The Maximum Number Of Open Files / File Descriptors limits.conf man-page On Linux - set maximum open files to unlimited. Possible?]]></content>
       <tags>
         <tag>Linux</tag>
@@ -39,7 +39,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F09%2F06%2Fhello-world%2F</url>
+    <url>%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

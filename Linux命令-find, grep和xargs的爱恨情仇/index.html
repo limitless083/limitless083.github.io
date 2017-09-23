@@ -119,19 +119,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 findfind的常见用法：  列出当前目录及子目录下所有文件和文件夹">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://limitless083.cn/2017/09/06/hello-world/index.html">
+<meta property="og:title" content="Linux命令:find, grep和xargs的爱恨情仇">
+<meta property="og:url" content="http://limitless083.cn/Linux命令-find, grep和xargs的爱恨情仇/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 findfind的常见用法：  列出当前目录及子目录下所有文件和文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://limitless083.cn/images/cl_WinTutorialTools.png">
-<meta property="og:updated_time" content="2017-09-20T16:18:38.463Z">
+<meta property="og:updated_time" content="2017-09-13T09:11:16.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="twitter:image" content="http://limitless083.cn/images/cl_WinTutorialTools.png">
+<meta name="twitter:title" content="Linux命令:find, grep和xargs的爱恨情仇">
+<meta name="twitter:description" content="find命令用来在指定目录下查找文件。 grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。 xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。 findfind的常见用法：  列出当前目录及子目录下所有文件和文件夹">
 
 
 
@@ -161,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/2017/09/06/hello-world/"/>
+  <link rel="canonical" href="http://limitless083.cn/Linux命令-find, grep和xargs的爱恨情仇/"/>
 
 
 
 
 
-  <title>Hello World | limitless blog</title>
+  <title>Linux命令:find, grep和xargs的爱恨情仇 | limitless blog</title>
   
 
 
@@ -358,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/2017/09/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/Linux命令-find, grep和xargs的爱恨情仇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -375,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Linux命令:find, grep和xargs的爱恨情仇</h1>
         
 
         <div class="post-meta">
@@ -387,8 +385,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T10:28:29+08:00">
-                2017-09-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T16:20:48+08:00">
+                2017-09-13
               </time>
             
 
@@ -403,8 +401,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-21T00:18:38+08:00">
-                2017-09-21
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-13T17:11:16+08:00">
+                2017-09-13
               </time>
             
           </span>
@@ -417,7 +415,7 @@
 
           
           
-             <span id="/2017/09/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/Linux命令-find, grep和xargs的爱恨情仇/" class="leancloud_visitors" data-flag-title="Linux命令:find, grep和xargs的爱恨情仇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -448,16 +446,105 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<p><img src="/images/cl_WinTutorialTools.png" alt=""></p>
+        <p>find命令用来在指定目录下查找文件。</p>
+<p>grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。</p>
+<p>xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，一般是管道输出给xargs。</p>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>find的常见用法：</p>
+<ul>
+<li><p>列出当前目录及子目录下所有文件和文件夹</p>
+<blockquote>
+<p>find .</p>
+</blockquote>
+</li>
+<li><p>在”/home”目录下查找以<code>.txt</code>结尾的文件</p>
+<blockquote>
+<p>find /home -name “*.txt”</p>
+</blockquote>
+</li>
+<li><p>在”/home”目录下查找不是以<code>.txt</code>结尾的文件</p>
+<blockquote>
+<p>find /home ! -name “*.txt”</p>
+</blockquote>
+</li>
+<li><p>根据文件类型查找</p>
+<blockquote>
+<p>find . -type 类型参数</p>
+<p>类型参数有:</p>
+<p>f 普通文件<br>l 符号链接<br>d 目录<br>c 字符设备<br>b 块设备<br>s 套接字<br>p fifo</p>
+</blockquote>
+</li>
+<li><p>根据文件大小进行匹配, 搜索大于10k的文件</p>
+<blockquote>
+<p>find . -type f -size +10k</p>
+</blockquote>
+</li>
+<li><p>根据权限进行匹配</p>
+<blockquote>
+<p>find . -type f -perm 777</p>
+</blockquote>
+</li>
+<li><p>查找所有空文件</p>
+<blockquote>
+<p>find . -empty</p>
+</blockquote>
+</li>
+</ul>
+<p>其他的详细的可以参考<code>man find</code></p>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>grep的常见用法：</p>
+<ul>
+<li><p>在文件中搜索一个单词，命令会返回一个包含”match_pattern”的文本行</p>
+<blockquote>
+<p>grep “match_pattern” file</p>
+<p>等同于</p>
+<p>cat file | grep “match_pattern”</p>
+</blockquote>
+</li>
+<li><p>递归搜索文件</p>
+<blockquote>
+<p>grep “text” . -r</p>
+</blockquote>
+</li>
+<li><p>在grep搜索结果中包括或者排除指定文件</p>
+<blockquote>
+<p>只在目录中所有的.php和.html文件中递归搜索字符”main()”</p>
+<p>grep “main()” . -r –include *.{php,html}</p>
+<p>在搜索结果中排除所有README文件<br>grep “main()” . -r –exclude “README”</p>
+<p>在搜索结果中排除filelist文件列表里的文件</p>
+<p>grep “main()” . -r –exclude-from filelist</p>
+</blockquote>
+</li>
+<li><p>显示匹配某个结果的之前或之后的行，<code>-A</code>(after),<code>-B</code>(before),<code>-C</code>(context)</p>
+<blockquote>
+<p>cat file | grep “haha” -A 3</p>
+</blockquote>
+</li>
+</ul>
+<p>其他的详细的可以参考<code>man grep</code></p>
+<h2 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h2><p>xargs的常见用法:</p>
+<ul>
+<li><p>xargs用作替换工具，读取输入数据重新格式化后输出</p>
+<blockquote>
+<p>cat test.txt</p>
+<p>输出：</p>
+<p>a b c </p>
+<p>d e f</p>
+<p>cat test.txt | xargs</p>
+<p>输出：</p>
+<p>a b c d e f</p>
+</blockquote>
+</li>
+<li><p>删除最近的5个文件</p>
+<blockquote>
+<p>ls -t | head -5 | xargs rm -rf</p>
+</blockquote>
+</li>
+<li><p>统计一个源代码目录中所有erlang文件的行数:</p>
+<blockquote>
+<p>find . -type f -name “*.erl” | xargs wc -l</p>
+</blockquote>
+</li>
+</ul>
+<p>其他的详细的可以参考<code>man xargs</code></p>
 
       
     </div>
@@ -511,14 +598,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/How-can-I-increase-open-files-limit/" rel="next" title="How can I increase open files limit">
+                <i class="fa fa-chevron-left"></i> How can I increase open files limit
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/07/How-can-I-increase-open-files-limit/" rel="prev" title="How can I increase open files limit">
-                How can I increase open files limit <i class="fa fa-chevron-right"></i>
+              <a href="/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/" rel="prev" title="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
+                执行inotifywait过程出现upper limit on inotify watches reached的解决方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">1.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep"><span class="nav-number">2.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs"><span class="nav-number">3.</span> <span class="nav-text">xargs</span></a></li></ol></div>
             
 
           </div>
@@ -806,9 +897,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/2017/09/06/hello-world/';
-          this.page.identifier = '2017/09/06/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://limitless083.cn/Linux命令-find, grep和xargs的爱恨情仇/';
+          this.page.identifier = 'Linux命令-find, grep和xargs的爱恨情仇/';
+          this.page.title = 'Linux命令:find, grep和xargs的爱恨情仇';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';

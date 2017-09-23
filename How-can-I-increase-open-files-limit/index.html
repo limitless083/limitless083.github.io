@@ -119,18 +119,18 @@
 
 
 
-<meta name="description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
+<meta name="description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
-<meta property="og:url" content="http://limitless083.cn/2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/index.html">
+<meta property="og:title" content="How can I increase open files limit">
+<meta property="og:url" content="http://limitless083.cn/How-can-I-increase-open-files-limit/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
+<meta property="og:description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T16:39:54.653Z">
+<meta property="og:updated_time" content="2017-09-07T15:59:53.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
-<meta name="twitter:description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
+<meta name="twitter:title" content="How can I increase open files limit">
+<meta name="twitter:description" content="步骤 Use the following command command to display maximum number of open file descriptors  cat /proc/sys/fs/file-max 6508886   To see the hard and soft values, issue the command as follows  ulimit -Hn 4">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/"/>
+  <link rel="canonical" href="http://limitless083.cn/How-can-I-increase-open-files-limit/"/>
 
 
 
 
 
-  <title>执行inotifywait过程出现upper limit on inotify watches reached的解决方式 | limitless blog</title>
+  <title>How can I increase open files limit | limitless blog</title>
   
 
 
@@ -357,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/How-can-I-increase-open-files-limit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -374,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">执行inotifywait过程出现upper limit on inotify watches reached的解决方式</h1>
+          <h1 class="post-title" itemprop="name headline">How can I increase open files limit</h1>
         
 
         <div class="post-meta">
@@ -386,8 +386,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T00:34:38+08:00">
-                2017-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T23:27:33+08:00">
+                2017-09-07
               </time>
             
 
@@ -402,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-20T00:39:54+08:00">
-                2017-09-20
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-07T23:59:53+08:00">
+                2017-09-07
               </time>
             
           </span>
@@ -416,7 +416,7 @@
 
           
           
-             <span id="/2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/" class="leancloud_visitors" data-flag-title="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
+             <span id="/How-can-I-increase-open-files-limit/" class="leancloud_visitors" data-flag-title="How can I increase open files limit">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,43 +447,48 @@
       
 
       
-        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><blockquote>
-<p>执行inotifywait过程中出现upper limit on inotify watches reached</p>
+        <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>Use the following command command to display maximum number of open file descriptors</p>
+<blockquote>
+<p>cat /proc/sys/fs/file-max</p>
+<p>6508886</p>
 </blockquote>
-<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h3><p>增加<code>/proc/sys/fs/inotify/max_user_watches</code></p>
-<p><code>/proc/sys/fs/inotify/max_user_watches</code> 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。</p>
-<h3 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h3><ol>
-<li><p>检查一下inotify watches的最大值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/sys/fs/inotify/max_user_watches</div></pre></td></tr></table></figure>
 </li>
-<li><p>设置inotify watches(以root权限)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 临时的</div><div class="line">sysctl fs.inotify.max_user_watches=81960</div><div class="line"></div><div class="line"># 永久的</div><div class="line">vi /etc/sysctl.conf</div><div class="line">添加 fs.inotify.max_user_watches=81960</div><div class="line"># 重新加载sysctl配置</div><div class="line">sysctl -p</div></pre></td></tr></table></figure>
+<li><p>To see the hard and soft values, issue the command as follows</p>
+<blockquote>
+<p>ulimit -Hn</p>
+<p>4096</p>
+<p>ulimit -Sn</p>
+<p>1024</p>
+</blockquote>
+</li>
+<li><p>open the sysctl.conf and add this line <code>fs.file-max = 65536</code>, 65536 can be other number.</p>
+<blockquote>
+<p>vi /etc/sysctl.conf</p>
+</blockquote>
+<p> add new line:</p>
+<blockquote>
+<p>fs.file-max = 65536</p>
+</blockquote>
+</li>
+<li><p>modify /etc/security/limits.conf according to <a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></p>
+<p> add user limit configuration, for example, for user cold:</p>
+<blockquote>
+<p>vi /etc/security/limits.conf</p>
+</blockquote>
+<p> add new line:</p>
+<blockquote>
+<p>cold - nofile 500000</p>
+<p>500000 should be lower than file-max</p>
+</blockquote>
+</li>
+<li><p>exit user and relogin</p>
 </li>
 </ol>
-<hr>
-<h3 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h3><h4 id="sysctl"><a href="#sysctl" class="headerlink" title="sysctl"></a>sysctl</h4><p>sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中</p>
-<p>常见用法:</p>
-<ul>
-<li><code>sysctl -a</code> 列出所有可读变量</li>
-<li><code>sysctl variable=value</code> 设置指定变量(临时的,若要永久的可以更改/etc/sysctl.conf文件)</li>
-<li><code>sysctl -p</code> 从配置文件“/etc/sysctl.conf”加载内核参数设置</li>
-</ul>
-<p>参考：<a href="http://man.linuxde.net/sysctl" target="_blank" rel="external">Linux命令大全-sysctl命令</a></p>
-<h4 id="inotify"><a href="#inotify" class="headerlink" title="inotify"></a>inotify</h4><p>Inotify为Linux提供了一套高效监控和跟踪文件变化的机制，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化，它采用的是事件驱动机制，不是轮询机制。</p>
-<p>在Linux中提供了inotify-tools，该工具包含了两个命令inotifywait和inotifywatch,分别用来收集有关文件访问信息和关于被监视的文件系统的统计信息。</p>
-<p>常见用法：</p>
-<ul>
-<li><code>inotifywait -mrq --timefmt &#39;%d/%m/%y/%H:%M&#39; --format &#39;%T %w %f&#39; -e create /dir</code> 监听目录创建文件的事件。</li>
-</ul>
-<p>参考: <a href="http://man.linuxde.net/inotifywait" target="_blank" rel="external">Linux命令大全-inotifywait</a>　<a href="https://www.infoq.com/articles/inotify-linux-file-system-event-monitoring" target="_blank" rel="external">Inotify: Efficient, Real-Time Linux File System Event Monitoring</a></p>
-<h4 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a>rsync</h4><p>rsync是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件。它使用所谓的“Rsync演算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。所以通常可以作为备份工具来使用。</p>
-<p>rsync的不足之处：rsync同步数据时，需要扫描所有文件后进行比对，进行差量传输。如果文件数量达到了百万甚至千万量级，扫描所有文件将是非常耗时的。因此常常使用rsync+inotify组合来实时同步数据。</p>
-<p>常见用法:</p>
-<ul>
-<li><code>rsync -a /data /backup</code> 从/data目录同步文件到/backup目录</li>
-<li><code>rsync -v rsync://192.168.78.192/www</code> 列远程机的文件列表。</li>
-</ul>
-<p>参考: <a href="http://man.linuxde.net/rsync" target="_blank" rel="external">Linux命令大全-rsync</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://unix.stackexchange.com/questions/8945/how-can-i-increase-open-files-limit-for-all-processes" target="_blank" rel="external">How can I increase open files limit for all processes?</a></p>
+<p><a href="https://www.cyberciti.biz/faq/linux-increase-the-maximum-number-of-open-files/" target="_blank" rel="external">Linux Increase The Maximum Number Of Open Files / File Descriptors</a></p>
+<p><a href="http://man7.org/linux/man-pages/man5/limits.conf.5.html" target="_blank" rel="external">limits.conf man-page</a></p>
+<p><a href="http://stackoverflow.com/questions/1212925/on-linux-set-maximum-open-files-to-unlimited-possible" target="_blank" rel="external">On Linux - set maximum open files to unlimited. Possible?</a></p>
 
       
     </div>
@@ -543,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/13/Linux命令-find, grep和xargs的爱恨情仇/" rel="next" title="Linux命令:find, grep和xargs的爱恨情仇">
-                <i class="fa fa-chevron-left"></i> Linux命令:find, grep和xargs的爱恨情仇
+              <a href="/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -553,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/20/GitHub+Hexo搭建博客/" rel="prev" title="GitHub+Hexo搭建博客">
-                GitHub+Hexo搭建博客 <i class="fa fa-chevron-right"></i>
+              <a href="/Linux命令-find, grep和xargs的爱恨情仇/" rel="prev" title="Linux命令:find, grep和xargs的爱恨情仇">
+                Linux命令:find, grep和xargs的爱恨情仇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方式"><span class="nav-number">2.</span> <span class="nav-text">解决方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决步骤"><span class="nav-number">3.</span> <span class="nav-text">解决步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关知识"><span class="nav-number">4.</span> <span class="nav-text">相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sysctl"><span class="nav-number">4.1.</span> <span class="nav-text">sysctl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inotify"><span class="nav-number">4.2.</span> <span class="nav-text">inotify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsync"><span class="nav-number">4.3.</span> <span class="nav-text">rsync</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -842,9 +847,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/';
-          this.page.identifier = '2017/09/20/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/';
-          this.page.title = '执行inotifywait过程出现upper limit on inotify watches reached的解决方式';
+          this.page.url = 'http://limitless083.cn/How-can-I-increase-open-files-limit/';
+          this.page.identifier = 'How-can-I-increase-open-files-limit/';
+          this.page.title = 'How can I increase open files limit';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';
