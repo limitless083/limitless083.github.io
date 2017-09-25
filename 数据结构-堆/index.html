@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-24T15:37:01.746Z">
+<meta property="og:updated_time" content="2017-09-25T16:08:58.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-堆">
 <meta name="twitter:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
@@ -402,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-24T23:37:01+08:00">
-                2017-09-24
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-26T00:08:58+08:00">
+                2017-09-26
               </time>
             
           </span>
@@ -470,7 +470,7 @@
 <li>针对插入操作的重构方式：新插入的节点放在完全二叉树最后的位置（数组的末尾）。再和父节点进行比较，如果小于父节点，这父节点交换，递归调用此过程直至不小于父节点或成为根节点。</li>
 </ul>
 <h3 id="堆的实现"><a href="#堆的实现" class="headerlink" title="堆的实现"></a>堆的实现</h3><p>堆通常以数组的形式实现，位置k的节点的父节点的位置为k/2向下取整(可以使用右移一位表示)，而它的两个子节点的位置分别为2k和2k+1。为方便这样计数，简化计算，一般根节点是放在k=1的位置，堆的表示中不使用a[0]。</p>
-<p>具体实现代码见 <a href="">github</a></p>
+<p>具体实现代码见 <a href="https://github.com/limitless083/algorithm/blob/master/src/sort/Heap.java" target="_blank" rel="external">github</a></p>
 <a id="more"></a>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>堆有两种主要操作：插入元素和删除根节点。堆一般用数组实现。</p>
 <h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p>优先队列是计算机科学中的一类抽象数据类型。优先队列中的每个元素都有各自的优先级，优先级最高的元素最先得到服务；优先级相同的元素按照其在优先队列中的顺序得到服务。优先队列往往用堆来实现。</p>
