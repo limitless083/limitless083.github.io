@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T16:08:58.452Z">
+<meta property="og:updated_time" content="2017-09-26T03:47:31.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-堆">
 <meta name="twitter:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
@@ -402,7 +402,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-26T00:08:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-26T11:47:31+08:00">
                 2017-09-26
               </time>
             
@@ -473,7 +473,7 @@
 <p>具体实现代码见 <a href="https://github.com/limitless083/algorithm/blob/master/src/sort/Heap.java" target="_blank" rel="external">github</a></p>
 <a id="more"></a>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>堆有两种主要操作：插入元素和删除根节点。堆一般用数组实现。</p>
-<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p>优先队列是计算机科学中的一类抽象数据类型。优先队列中的每个元素都有各自的优先级，优先级最高的元素最先得到服务；优先级相同的元素按照其在优先队列中的顺序得到服务。优先队列往往用堆来实现。</p>
+<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><h4 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h4><p>优先队列是计算机科学中的一类抽象数据类型。优先队列中的每个元素都有各自的优先级，优先级最高的元素最先得到服务；优先级相同的元素按照其在优先队列中的顺序得到服务。优先队列往往用堆来实现。</p>
 <p>优先队列有两种实现：</p>
 <ul>
 <li>初级实现</li>
@@ -482,6 +482,14 @@
 <p>初级实现采用有序数组或者无序数组来实现。有序数组插入操作时间复杂度为O(n)，删除操作为O(1)；无序数组插入操作时间复杂度为O(1)，删除操作为O(n)。</p>
 <p>堆实现则使插入和删除操作的时间复杂度为O(logn)。</p>
 <p>因此优先队列常使用堆来实现。</p>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。</p>
+<p>在堆的数据结构中，堆中的最大值总是位于根节点(在优先队列中使用堆的话堆中的最小值位于根节点)。堆中定义以下几种操作：</p>
+<ul>
+<li>最大堆调整（Max_Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点</li>
+<li>创建最大堆（Build_Max_Heap）：将堆所有数据重新排序</li>
+<li>堆排序（HeapSort）：移除位在第一个数据的根节点，交换到数组的末尾，并做最大堆调整的递归运算。</li>
+</ul>
+<p>具体实现代码见 <a href="https://github.com/limitless083/algorithm/blob/master/src/sort/HeapSort.java" target="_blank" rel="external">github</a></p>
 <hr>
 <p>参考：</p>
 <p><a href="http://www.cnblogs.com/vamei/archive/2013/03/20/2966612.html" target="_blank" rel="external">纸上谈兵: 堆 (heap)</a></p>
@@ -703,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的性质"><span class="nav-number">1.</span> <span class="nav-text">堆的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的操作"><span class="nav-number">2.</span> <span class="nav-text">堆的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的实现"><span class="nav-number">3.</span> <span class="nav-text">堆的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的性质"><span class="nav-number">1.</span> <span class="nav-text">堆的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的操作"><span class="nav-number">2.</span> <span class="nav-text">堆的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的实现"><span class="nav-number">3.</span> <span class="nav-text">堆的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优先队列"><span class="nav-number">5.1.</span> <span class="nav-text">优先队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">5.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li></ol></div>
             
 
           </div>
