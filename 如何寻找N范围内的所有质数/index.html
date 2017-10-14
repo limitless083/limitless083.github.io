@@ -128,7 +128,7 @@
 <meta property="og:description" content="一、基本概念质数(prime number):指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数。 合数(composite number)：指在大于1的自然数中，因数除了1和其本身外具有另一因数的正整数。 0和1既不是质数也不是合数。 孪生素数：是指一对素数，它们之间相差2。例如3和5，5和7，11和13，10016957和10016959等等都是孪生素数。 约数：假如整数n除以">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://limitless083.cn/如何寻找N范围内的所有质数/seive_of_euler.png">
-<meta property="og:updated_time" content="2017-10-14T13:34:57.299Z">
+<meta property="og:updated_time" content="2017-10-14T16:18:58.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何寻找N范围内的所有质数">
 <meta name="twitter:description" content="一、基本概念质数(prime number):指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数。 合数(composite number)：指在大于1的自然数中，因数除了1和其本身外具有另一因数的正整数。 0和1既不是质数也不是合数。 孪生素数：是指一对素数，它们之间相差2。例如3和5，5和7，11和13，10016957和10016959等等都是孪生素数。 约数：假如整数n除以">
@@ -404,8 +404,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-14T21:34:57+08:00">
-                2017-10-14
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-15T00:18:58+08:00">
+                2017-10-15
               </time>
             
           </span>
@@ -474,6 +474,7 @@
 <p>Java 代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span>[] primes(<span class="keyword">int</span> num) &#123;</div><div class="line">    <span class="keyword">boolean</span>[] isPrime = <span class="keyword">new</span> <span class="keyword">boolean</span>[num + <span class="number">1</span>];</div><div class="line">    <span class="keyword">int</span>[] primes = <span class="keyword">new</span> <span class="keyword">int</span>[num];</div><div class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= num; i++) &#123;</div><div class="line">        isPrime[i] = <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= num; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (isPrime[i]) &#123;</div><div class="line">            primes[cnt++] = i;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; cnt &amp;&amp; i*primes[j] &lt;= num; j++) &#123;</div><div class="line">            isPrime[i*primes[j]] = <span class="keyword">false</span>;</div><div class="line">            <span class="keyword">if</span> (i % primes[j] == <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> isPrime;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>时间复杂度：O(n)</p>
+<p>代码见：<a href="https://github.com/limitless083/algorithm/blob/master/src/problems/MaxPrime.java" target="_blank" rel="external">github max prime</a></p>
 <h4 id="4-米勒拉宾检验（随机性算法）"><a href="#4-米勒拉宾检验（随机性算法）" class="headerlink" title="4. 米勒拉宾检验（随机性算法）"></a>4. 米勒拉宾检验（随机性算法）</h4><h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="https://program-think.blogspot.com/2011/12/prime-algorithm-1.html" target="_blank" rel="external">求质数算法的 N 种境界1-试除法和初级筛法</a></p>
 <p><a href="http://research.cs.wisc.edu/techreports/1990/TR909.pdf" target="_blank" rel="external">线性筛法</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">wiki-Sieve of Eratosthenes</a></p>
