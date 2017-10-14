@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="一、基本概念质数(prime number):指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数。 合数(composite number)：指在大于1的自然数中，因数除了1和其本身外具有另一因数的正整数。 0和1既不是质数也不是合数。 孪生素数：是指一对素数，它们之间相差2。例如3和5，5和7，11和13，10016957和10016959等等都是孪生素数。 约数：假如整数n除以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-14T04:50:57.139Z">
+<meta property="og:updated_time" content="2017-10-14T04:52:48.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何寻找N范围内的所有质数">
 <meta name="twitter:description" content="一、基本概念质数(prime number):指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数。 合数(composite number)：指在大于1的自然数中，因数除了1和其本身外具有另一因数的正整数。 0和1既不是质数也不是合数。 孪生素数：是指一对素数，它们之间相差2。例如3和5，5和7，11和13，10016957和10016959等等都是孪生素数。 约数：假如整数n除以">
@@ -402,7 +402,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-14T12:50:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-14T12:52:48+08:00">
                 2017-10-14
               </time>
             
@@ -455,6 +455,7 @@
 <p>自然数 N 的全部正约数个数以d(n)表示，若N=a1^n1 *a2^n2 …，其中a1,a2为质数，则d(n) = (n1+1)(n2+1)… ，对a1可以取a1^0 可以取 a1^1, a1^2…,所有a1因子有n1+1中选择，其他因子类似。</p>
 <h3 id="二、相关定理"><a href="#二、相关定理" class="headerlink" title="二、相关定理"></a>二、相关定理</h3><h4 id="素数定理"><a href="#素数定理" class="headerlink" title="素数定理"></a><a href="https://zh.wikipedia.org/wiki/%E8%B3%AA%E6%95%B8%E5%AE%9A%E7%90%86" target="_blank" rel="external">素数定理</a></h4><p>素数定理用于估计素数个数。对正整数x，小于等于x范围内的素数的个数π(x)≈x/lnx，误差一般不超过±15%。x越大误差越小。</p>
 <h4 id="算术基本定理"><a href="#算术基本定理" class="headerlink" title="算术基本定理"></a><a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86" target="_blank" rel="external">算术基本定理</a></h4><p>算术基本定理，又称为正整数的唯一分解定理。每个大于1的自然数均可写为质数的积，而且这些素因子按大小排列之后，写法仅有一种方式。</p>
+<a id="more"></a>
 <h3 id="三、测试素数"><a href="#三、测试素数" class="headerlink" title="三、测试素数"></a>三、测试素数</h3><ol>
 <li><p>试除法（确定性算法）</p>
 <p> 测试n是否为素数的最基本方法为试除法。此一程序将n除以每个大于1且小于等于n的平方根之整数m。若存在一个相除为整数的结果，则n不是素数；反之则是个素数。实际上，若n=ab是个合数（其中a与b≠1），则其中一个约数a或b必定至大为sqrt(n)。</p>
@@ -464,13 +465,11 @@
 <p> 所使用的原理是从2开始，将每个素数的各个倍数，标记成合数。一个素数的各个倍数，是一个差为此素数本身的等差数列。此为这个筛法和试除法不同的关键之处，后者是以素数来测试每个待测数能否被整除。</p>
 <p> 伪代码:</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Input: an integer n &gt; <span class="number">1</span></div><div class="line"> </div><div class="line">Let A be an array of Boolean values, indexed by integers <span class="number">2</span> to n,</div><div class="line">initially all set to <span class="keyword">true</span>.</div><div class="line"> </div><div class="line"><span class="keyword">for</span> i = <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, ..., not exceeding √n:</div><div class="line">    <span class="keyword">if</span> A[i] is <span class="keyword">true</span>:</div><div class="line">    <span class="keyword">for</span> j = i^<span class="number">2</span>, i^<span class="number">2</span>+i, i^<span class="number">2</span>+<span class="number">2</span>i, i^<span class="number">2</span>+<span class="number">3</span>i, ..., not exceeding n:</div><div class="line">        A[j] := <span class="keyword">false</span></div><div class="line"> </div><div class="line">Output: all i such that A[i] is <span class="keyword">true</span>.</div></pre></td></tr></table></figure>
+<p> Java 代码：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public boolean[] primes(int num) &#123;</div><div class="line">    boolean[] isPrime = new boolean[num + 1];</div><div class="line">    for (int i = 2; i &lt;= num; i++) &#123;</div><div class="line">        isPrime[i] = true;</div><div class="line">    &#125;</div><div class="line">    for (int i = 2; i*i &lt;= num; i++) &#123;</div><div class="line">        if (isPrime[i]) &#123;</div><div class="line">            for (int j = i*i; j &lt;= num; j+=i) &#123;</div><div class="line">                isPrime[j] = false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return isPrime;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<pre><code>Java 代码：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public boolean[] primes(int num) &#123;</div><div class="line">    boolean[] isPrime = new boolean[num + 1];</div><div class="line">    for (int i = 2; i &lt;= num; i++) &#123;</div><div class="line">        isPrime[i] = true;</div><div class="line">    &#125;</div><div class="line">    for (int i = 2; i*i &lt;= num; i++) &#123;</div><div class="line">        if (isPrime[i]) &#123;</div><div class="line">            for (int j = i*i; j &lt;= num; j+=i) &#123;</div><div class="line">                isPrime[j] = false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return isPrime;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-
-时间复杂度：O(nloglogn)。此种筛法会重复删除某个合数，比如`30=2*15=3*10=5*6`，会重复筛掉3次，这样会导致速度慢。解决方法是按照一个数的`最小素因子`筛选。
+<pre><code>时间复杂度：O(nloglogn)。此种筛法会重复删除某个合数，比如`30=2*15=3*10=5*6`，会重复筛掉3次，这样会导致速度慢。解决方法是按照一个数的`最小素因子`筛选。
 </code></pre><ol>
 <li><p>欧拉筛法（线性筛法）</p>
 <p> 基本思想：按照一个数的的<code>最小素因子</code>筛选。每个合数一定有几个素因子，一定有最小的一个素因子。最大素因子是唯一的，所以合数只会被它自己唯一的最素因子筛掉一次。</p>
