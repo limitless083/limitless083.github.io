@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="算法,树," />
 
 
 
@@ -119,20 +119,18 @@
 
 
 
-<meta name="description" content="Hexo有多种方式插入图片，以下讲解其中三种方式。 一、通过Markdown语法引用将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 ![](/images/example.jpg) 即可。 这种方法针对的是在hexo整个项目中有少量的图片的情况，且 _config.yml 中 post_asset_folder 必须为 false 才能引用。 二、">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="二叉树有4种遍历方式：前序遍历、中序遍历、后序遍历和后序遍历方式。 前序遍历、中序遍历、后序遍历是深度优先搜索，适合用递归方式和栈实现。 层次遍历是广度优先搜索，适合用队列实现。 树的结点：12345678Node &amp;#123;    int data;    Node left, right;    Node(int data) &amp;#123;        this.data = data;">
+<meta name="keywords" content="算法,树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo中如何插入图片">
-<meta property="og:url" content="http://limitless083.cn/Hexo中如何插入图片/index.html">
+<meta property="og:title" content="前序遍历、中序遍历、后序遍历的递归和非递归实现方法">
+<meta property="og:url" content="http://limitless083.cn/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="Hexo有多种方式插入图片，以下讲解其中三种方式。 一、通过Markdown语法引用将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 ![](/images/example.jpg) 即可。 这种方法针对的是在hexo整个项目中有少量的图片的情况，且 _config.yml 中 post_asset_folder 必须为 false 才能引用。 二、">
+<meta property="og:description" content="二叉树有4种遍历方式：前序遍历、中序遍历、后序遍历和后序遍历方式。 前序遍历、中序遍历、后序遍历是深度优先搜索，适合用递归方式和栈实现。 层次遍历是广度优先搜索，适合用队列实现。 树的结点：12345678Node &amp;#123;    int data;    Node left, right;    Node(int data) &amp;#123;        this.data = data;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://limitless083.cn/Hexo中如何插入图片/test.jpg">
-<meta property="og:updated_time" content="2017-09-20T17:00:03.387Z">
+<meta property="og:updated_time" content="2017-10-18T15:59:56.656Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo中如何插入图片">
-<meta name="twitter:description" content="Hexo有多种方式插入图片，以下讲解其中三种方式。 一、通过Markdown语法引用将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 ![](/images/example.jpg) 即可。 这种方法针对的是在hexo整个项目中有少量的图片的情况，且 _config.yml 中 post_asset_folder 必须为 false 才能引用。 二、">
-<meta name="twitter:image" content="http://limitless083.cn/Hexo中如何插入图片/test.jpg">
+<meta name="twitter:title" content="前序遍历、中序遍历、后序遍历的递归和非递归实现方法">
+<meta name="twitter:description" content="二叉树有4种遍历方式：前序遍历、中序遍历、后序遍历和后序遍历方式。 前序遍历、中序遍历、后序遍历是深度优先搜索，适合用递归方式和栈实现。 层次遍历是广度优先搜索，适合用队列实现。 树的结点：12345678Node &amp;#123;    int data;    Node left, right;    Node(int data) &amp;#123;        this.data = data;">
 
 
 
@@ -162,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/Hexo中如何插入图片/"/>
+  <link rel="canonical" href="http://limitless083.cn/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/"/>
 
 
 
 
 
-  <title>Hexo中如何插入图片 | limitless blog</title>
+  <title>前序遍历、中序遍历、后序遍历的递归和非递归实现方法 | limitless blog</title>
   
 
 
@@ -359,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/Hexo中如何插入图片/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -376,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo中如何插入图片</h1>
+          <h1 class="post-title" itemprop="name headline">前序遍历、中序遍历、后序遍历的递归和非递归实现方法</h1>
         
 
         <div class="post-meta">
@@ -388,8 +386,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T00:39:35+08:00">
-                2017-09-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T23:59:27+08:00">
+                2017-10-18
               </time>
             
 
@@ -404,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-21T01:00:03+08:00">
-                2017-09-21
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T23:59:56+08:00">
+                2017-10-18
               </time>
             
           </span>
@@ -418,7 +416,7 @@
 
           
           
-             <span id="/Hexo中如何插入图片/" class="leancloud_visitors" data-flag-title="Hexo中如何插入图片">
+             <span id="/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/" class="leancloud_visitors" data-flag-title="前序遍历、中序遍历、后序遍历的递归和非递归实现方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,22 +447,96 @@
       
 
       
-        <p>Hexo有多种方式插入图片，以下讲解其中三种方式。</p>
-<h3 id="一、通过Markdown语法引用"><a href="#一、通过Markdown语法引用" class="headerlink" title="一、通过Markdown语法引用"></a>一、通过Markdown语法引用</h3><p>将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 <code>![](/images/example.jpg)</code> 即可。</p>
-<p>这种方法针对的是在hexo整个项目中有少量的图片的情况，且 <code>_config.yml</code> 中 <code>post_asset_folder</code> 必须为 <code>false</code> 才能引用。</p>
-<h3 id="二、通过标签插件引用"><a href="#二、通过标签插件引用" class="headerlink" title="二、通过标签插件引用"></a>二、通过标签插件引用</h3><p>在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。</p>
-<p>设置<code>_config.yml</code> 中 <code>post_asset_folder</code> 为 <code>true</code> 可以使每一次<code>hexo new post postname</code>都创建一个postname的文件夹和postname.md的文件。</p>
-<p>把图片 example.jpg 放到postname文件夹中，然后在md文件里使用下面方式引用：</p>
-
-{% asset_img example.jpg This is an example image %}
-
-<h3 id="三、CDN引用"><a href="#三、CDN引用" class="headerlink" title="三、CDN引用"></a>三、CDN引用</h3><p>将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。</p>
+        <p>二叉树有4种遍历方式：前序遍历、中序遍历、后序遍历和后序遍历方式。</p>
+<p>前序遍历、中序遍历、后序遍历是深度优先搜索，适合用递归方式和栈实现。</p>
+<p>层次遍历是广度优先搜索，适合用队列实现。</p>
+<p>树的结点：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Node &#123;</div><div class="line">    <span class="keyword">int</span> data;</div><div class="line">    Node left, right;</div><div class="line">    Node(<span class="keyword">int</span> data) &#123;</div><div class="line">        <span class="keyword">this</span>.data = data;</div><div class="line">        left = right = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="一、前序遍历"><a href="#一、前序遍历" class="headerlink" title="一、前序遍历"></a>一、前序遍历</h3><blockquote>
+<p>root -&gt; left_child -&gt; right_child</p>
+</blockquote>
+<h4 id="递归方式："><a href="#递归方式：" class="headerlink" title="递归方式："></a>递归方式：</h4><ul>
+<li>访问根节点</li>
+<li>访问<code>左子树</code></li>
+<li>访问<code>右子树</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recursivePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    System.out.println(root.data);</div><div class="line">    recursivePreorder(root.left);</div><div class="line">    recursivePreorder(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="非递归方式："><a href="#非递归方式：" class="headerlink" title="非递归方式："></a>非递归方式：</h4><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><ol>
+<li><p>push左子树直到叶子节点，边push边遍历</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">    System.out.println(p.data);</div><div class="line">    stack.push(p);</div><div class="line">    p = p.left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当Stack不为空时，弹出栈，若该节点有右子树，则push右子树的左子树直到叶子节点。重复1,2（根节点-&gt;遍历左子树-&gt;遍历右子树）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p = stack.pop();</div><div class="line">p = p.right;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    Node p = root;</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty() || p != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// 边push边遍历，之后要借助push进来的节点到右子树上</span></div><div class="line">            System.out.println(p.data);</div><div class="line">            stack.push(p);</div><div class="line">            p = p.left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        p = stack.pop();</div><div class="line">        p = p.right;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><p>利用栈具有First-In-Last-Out的特点。</p>
+<p>过程：循环{ pop出节点后，先push当前节点的右节点，再push当前节点的左节点 }。</p>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    Node p = <span class="keyword">null</span>;</div><div class="line">    stack.push(root);</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">        p = stack.pop();</div><div class="line">        System.out.println(p.data);</div><div class="line">        <span class="keyword">if</span> (p.right != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p.right);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (p.left != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p.left);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<hr>
-<p>图片测试：</p>
-<img src="/Hexo中如何插入图片/test.jpg" alt="这是一个测试图片" title="这是一个测试图片">
-<p>参考:</p>
-<p><a href="https://hexo.io/docs/asset-folders.html" target="_blank" rel="external">Hexo官方文档-Asset资源文件夹</a></p>
+<h3 id="二、中序遍历"><a href="#二、中序遍历" class="headerlink" title="二、中序遍历"></a>二、中序遍历</h3><blockquote>
+<p>left_child -&gt; root -&gt; right_child</p>
+</blockquote>
+<h4 id="递归方式：-1"><a href="#递归方式：-1" class="headerlink" title="递归方式："></a>递归方式：</h4><ul>
+<li>访问<code>左子树</code></li>
+<li>访问根节点</li>
+<li>访问<code>右子树</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recursiveInorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    recursivePreorder(root.left);</div><div class="line">    System.out.println(root.data);</div><div class="line">    recursivePreorder(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="非递归方式：-1"><a href="#非递归方式：-1" class="headerlink" title="非递归方式："></a>非递归方式：</h4><ol>
+<li><p>push左子树直到叶子节点</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">    stack.push(p);</div><div class="line">    p = p.left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当Stack不为空时，弹出栈，遍历该节点。若该节点有右子树，则push右子树的左子树直到叶子节点。重复1，2 （遍历左子树-&gt;根节点-&gt;遍历右子树）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p = stack.pop();</div><div class="line">System.out.println(p.data);</div><div class="line">p = p.right;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativeInorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    Node p = root;</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty() || p != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p);</div><div class="line">            p = p.left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        p = stack.pop();</div><div class="line">        System.out.println(p.data);</div><div class="line">        p = p.right;</div><div class="line">        <span class="comment">//下次循环就开始遍历右子树了</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="三、后序遍历"><a href="#三、后序遍历" class="headerlink" title="三、后序遍历"></a>三、后序遍历</h3><blockquote>
+<p>left_child -&gt; right_child -&gt; root</p>
+</blockquote>
+<h4 id="递归方式：-2"><a href="#递归方式：-2" class="headerlink" title="递归方式："></a>递归方式：</h4><ul>
+<li>访问<code>左子树</code></li>
+<li>访问<code>右子树</code></li>
+<li>访问根节点</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recursiveInorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    recursivePreorder(root.left);</div><div class="line">    recursivePreorder(root.right);</div><div class="line">    System.out.println(root.data);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="非递归方式：-2"><a href="#非递归方式：-2" class="headerlink" title="非递归方式："></a>非递归方式：</h4><h5 id="方法1-1"><a href="#方法1-1" class="headerlink" title="方法1"></a>方法1</h5><p>后序遍历的迭代方法比前两个要难一点，难点在于只有当右子树遍历完了以后才可以弹出根节点。</p>
+<p>设置一个lastVisitNode来指示最后一次遍历到哪了，根据这个来判断弹出的元素的右子树有没有遍历过，只有遍历过才可以访问根节点。</p>
+<ol>
+<li><p>push左子树直到叶子节点</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">    stack.push(p);</div><div class="line">    p = p.left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当Stack非空时，peek栈顶，看栈顶节点的右子树是否全部访问过，如果访问过就弹出该栈顶节点并访问；如果没有访问过，则push右子树的左子树直到叶子节点。重复1,2。（遍历左子树-&gt;遍历右子树-&gt;根节点）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">p = stack.peek();</div><div class="line"><span class="keyword">if</span> (p.right == <span class="keyword">null</span> || p.right == lastVisitNode) &#123;</div><div class="line">    stack.pop();</div><div class="line">    System.out.println(p.data);</div><div class="line">    lastVisitNode = p;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    p = p.right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePostorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    Node p = root;</div><div class="line">    Node lastVisitNode = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty() || p != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p);</div><div class="line">            p = p.left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        p = stack.peek();</div><div class="line">        <span class="keyword">if</span> (p.right == <span class="keyword">null</span> || p.right == lastVisitNode) &#123;</div><div class="line">            stack.pop();</div><div class="line">            System.out.println(p.data);</div><div class="line">            lastVisitNode = p;</div><div class="line">            <span class="comment">// p节点已经访问过了，要置null防止下次循环再遍历</span></div><div class="line">            p = <span class="keyword">null</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            p = p.right;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="方法2-1"><a href="#方法2-1" class="headerlink" title="方法2"></a>方法2</h5><p>思路：后序遍历是<code>左子树-&gt;右子树-&gt;根节点</code>，倒过来则可以是<code>根节点-&gt;右子树-&gt;左子树</code>，是前序遍历的变形。然后将这样的遍历压到另一个栈中，再弹出来。这样空间复杂度会由O(logn)变大为O(n)。</p>
+<p>完整代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePostorder3</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; stack1 = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    ArrayDeque&lt;Node&gt; stack2 = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    Node p = root;</div><div class="line">    <span class="keyword">while</span> (!stack1.isEmpty() || p != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">            stack2.push(p);</div><div class="line">            stack1.push(p);</div><div class="line">            p = p.right;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        p = stack1.pop();</div><div class="line">        p = p.left;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span> (!stack2.isEmpty()) &#123;</div><div class="line">        System.out.println(stack2.pop().data);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="四、层次遍历"><a href="#四、层次遍历" class="headerlink" title="四、层次遍历"></a>四、层次遍历</h3><blockquote>
+<p>level1 -&gt; level2 -&gt; … (每一层从左到右)</p>
+</blockquote>
+<p>层次遍历是广度优先搜索，需要使用队列，利用队列的First-In-First-Out的特点，每一层逐个按左孩子右孩子的顺序往队列里添加。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    Node p = <span class="keyword">null</span>;</div><div class="line">    queue.offer(root);</div><div class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</div><div class="line">        p = queue.poll();</div><div class="line">        System.out.println(p.data);</div><div class="line">        <span class="keyword">if</span> (p.left != <span class="keyword">null</span>) &#123;</div><div class="line">            queue.offer(p.left);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (p.right != <span class="keyword">null</span>) &#123;</div><div class="line">            queue.offer(p.right);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h3><ul>
+<li><p>一定要记住树的定义本身是一种递归的方式定义的。因此左子树和右子树都可以看成一棵树，实现各种算法的时候可以根据这点来考虑。左孩子是左子树的根节点，右孩子是右子树的根节点。</p>
+<blockquote>
+<p>A tree data structure can be defined recursively (locally) as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the “children”), with the constraints that no reference is duplicated, and none points to the root.</p>
+</blockquote>
+</li>
+<li><p>递归一定要从大局入手，不要考虑细节，比如前序遍历，大局就是先访问根节点，再访问左子树，再访问右子树，可以立马能写出来代码。</p>
+</li>
+<li>广度优先搜索一般使用队列；深度优先搜索一般使用栈和递归方式。</li>
+</ul>
+<p>所有代码见<a href="https://github.com/limitless083/algorithm/blob/master/src/tree/BinaryTree.java" target="_blank" rel="external">github-tree</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.geeksforgeeks.org/iterative-preorder-traversal/" target="_blank" rel="external">Iterative Preorder Traversal</a></p>
+<p><a href="http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/" target="_blank" rel="external">Inorder Tree Traversal without Recursion</a></p>
+<p><a href="http://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/" target="_blank" rel="external">Iterative Postorder Traversal | Set 2 (Using One Stack)</a></p>
+<p><a href="http://blog.csdn.net/zhangxiangdavaid/article/details/37115355" target="_blank" rel="external">二叉树前序、中序、后序遍历非递归写法的透彻解析</a></p>
+<p><a href="http://www.jianshu.com/p/76ab8febf02c" target="_blank" rel="external">二叉树的层次遍历</a></p>
 
       
     </div>
@@ -511,7 +583,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/树/" rel="tag"># 树</a>
           
         </div>
       
@@ -524,8 +598,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/GitHub+Hexo搭建博客/" rel="next" title="GitHub+Hexo搭建博客">
-                <i class="fa fa-chevron-left"></i> GitHub+Hexo搭建博客
+              <a href="/Windows-Server-2016-计划任务优先级更改方法/" rel="next" title="Windows Server 2016 计划任务优先级更改方法">
+                <i class="fa fa-chevron-left"></i> Windows Server 2016 计划任务优先级更改方法
               </a>
             
           </div>
@@ -533,10 +607,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/数据结构-堆/" rel="prev" title="数据结构-堆">
-                数据结构-堆 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -681,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、通过Markdown语法引用"><span class="nav-number">1.</span> <span class="nav-text">一、通过Markdown语法引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、通过标签插件引用"><span class="nav-number">2.</span> <span class="nav-text">二、通过标签插件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、CDN引用"><span class="nav-number">3.</span> <span class="nav-text">三、CDN引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、前序遍历"><span class="nav-number">1.</span> <span class="nav-text">一、前序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归方式："><span class="nav-number">1.1.</span> <span class="nav-text">递归方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非递归方式："><span class="nav-number">1.2.</span> <span class="nav-text">非递归方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法2"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、中序遍历"><span class="nav-number">2.</span> <span class="nav-text">二、中序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归方式：-1"><span class="nav-number">2.1.</span> <span class="nav-text">递归方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非递归方式：-1"><span class="nav-number">2.2.</span> <span class="nav-text">非递归方式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、后序遍历"><span class="nav-number">3.</span> <span class="nav-text">三、后序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归方式：-2"><span class="nav-number">3.1.</span> <span class="nav-text">递归方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非递归方式：-2"><span class="nav-number">3.2.</span> <span class="nav-text">非递归方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法2-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、层次遍历"><span class="nav-number">4.</span> <span class="nav-text">四、层次遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、总结"><span class="nav-number">5.</span> <span class="nav-text">五、总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -823,9 +893,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/Hexo中如何插入图片/';
-          this.page.identifier = 'Hexo中如何插入图片/';
-          this.page.title = 'Hexo中如何插入图片';
+          this.page.url = 'http://limitless083.cn/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/';
+          this.page.identifier = '前序遍历、中序遍历、后序遍历的递归和非递归实现方法/';
+          this.page.title = '前序遍历、中序遍历、后序遍历的递归和非递归实现方法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';
