@@ -127,10 +127,12 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="1. 概念拓扑排序是对有向无环图的顶点的一种排序，它使得如果存在一条从顶点A到顶点B的路径，那么在排序中B出现在A的后面。 在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序：①每个顶点出现且只出现一次；②若A在序列中排在B的前面，则在图中不存在从B到A的路径。 只有DAG才有拓扑排序。通常，一个有向无环图可以有一个或多个拓扑排序序列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-06T05:33:07.632Z">
+<meta property="og:image" content="http://limitless083.cn/数据结构-拓扑排序/directed_graph.png">
+<meta property="og:updated_time" content="2017-12-06T12:55:47.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-拓扑排序">
 <meta name="twitter:description" content="1. 概念拓扑排序是对有向无环图的顶点的一种排序，它使得如果存在一条从顶点A到顶点B的路径，那么在排序中B出现在A的后面。 在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序：①每个顶点出现且只出现一次；②若A在序列中排在B的前面，则在图中不存在从B到A的路径。 只有DAG才有拓扑排序。通常，一个有向无环图可以有一个或多个拓扑排序序列。">
+<meta name="twitter:image" content="http://limitless083.cn/数据结构-拓扑排序/directed_graph.png">
 
 
 
@@ -402,7 +404,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-06T13:33:07+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-06T20:55:47+08:00">
                 2017-12-06
               </time>
             
@@ -465,7 +467,21 @@
 <li>当以邻接矩阵存储时，时间复杂度为O(|V|^2)。</li>
 </ul>
 <p>代码实现：<a href="https://github.com/limitless083/algorithm/blob/master/src/graph/Graph.java" target="_blank" rel="external">Topological Sort</a></p>
-<h3 id="3-参考："><a href="#3-参考：" class="headerlink" title="3.参考："></a>3.参考：</h3><p><a href="http://www.geeksforgeeks.org/topological-sorting/" target="_blank" rel="external">geeksforgeeks Topological sort</a></p>
+<h3 id="3-如何检测有向环？"><a href="#3-如何检测有向环？" class="headerlink" title="3.如何检测有向环？"></a>3.如何检测有向环？</h3><ul>
+<li><p>使用Kahn算法，迭代删除入度为0的顶点和边所对应的顶点，若最后还有未遍历到的点，则有环。</p>
+</li>
+<li><p>使用深度优先搜索，一条深度优先搜索的路径上如果折回到已经遍历的点，则表示有环。具体可以加个white set表示没被访问过的，gray set表示正在访问的，black set表示已经访问的，但凡在dfs过程中遇到的点在gray set中就表示有环。</p>
+</li>
+</ul>
+<p>代码实现:<a href="https://github.com/limitless083/algorithm/blob/master/src/graph/CycleInDirectedGraph.java" target="_blank" rel="external">有向环检测</a></p>
+<h3 id="4-如何检测无向环"><a href="#4-如何检测无向环" class="headerlink" title="4. 如何检测无向环"></a>4. 如何检测无向环</h3><ul>
+<li>使用Disjoint算法，一开始将所有顶点放到不同的set中，然后遍历边，将边所对应的两个set合并，若出现有边对应的两个顶点在同一个set中，则表明有环。</li>
+<li>使用深度优先搜索算法，将parent顶点传下去防止子顶点遍历parent顶点，只要在visited中已经被访问过，则表示有环。</li>
+</ul>
+<p>代码实现:<a href="https://github.com/limitless083/algorithm/blob/master/src/graph/CycleInUndirectedGraph.java" target="_blank" rel="external">无向环检测</a></p>
+<h4 id="5-有向环和无向环检测的区别"><a href="#5-有向环和无向环检测的区别" class="headerlink" title="5. 有向环和无向环检测的区别"></a>5. 有向环和无向环检测的区别</h4><p>区别的关键在于有向图是有方向的，无向环的检测方法都忽略了方向，若使用检测无向环的方式检测的话会导致判断错误，如下图所示。</p>
+<img src="/数据结构-拓扑排序/directed_graph.png" alt="有向图" title="有向图">
+<h3 id="6-参考："><a href="#6-参考：" class="headerlink" title="6.参考："></a>6.参考：</h3><p><a href="http://www.geeksforgeeks.org/topological-sorting/" target="_blank" rel="external">geeksforgeeks Topological sort</a></p>
 <p><a href="https://www.youtube.com/watch?v=ddTC4Zovtbc" target="_blank" rel="external">Youtube-Topological Sort Graph Algorithm</a></p>
 
       
@@ -679,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">1.</span> <span class="nav-text">1. 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-算法"><span class="nav-number">2.</span> <span class="nav-text">2.算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-参考："><span class="nav-number">3.</span> <span class="nav-text">3.参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">1.</span> <span class="nav-text">1. 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-算法"><span class="nav-number">2.</span> <span class="nav-text">2.算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何检测有向环？"><span class="nav-number">3.</span> <span class="nav-text">3.如何检测有向环？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何检测无向环"><span class="nav-number">4.</span> <span class="nav-text">4. 如何检测无向环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-有向环和无向环检测的区别"><span class="nav-number">4.1.</span> <span class="nav-text">5. 有向环和无向环检测的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-参考："><span class="nav-number">5.</span> <span class="nav-text">6.参考：</span></a></li></ol></div>
             
 
           </div>
