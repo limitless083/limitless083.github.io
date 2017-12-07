@@ -128,7 +128,7 @@
 <meta property="og:description" content="1. 概念拓扑排序是对有向无环图的顶点的一种排序，它使得如果存在一条从顶点A到顶点B的路径，那么在排序中B出现在A的后面。 在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序：①每个顶点出现且只出现一次；②若A在序列中排在B的前面，则在图中不存在从B到A的路径。 只有DAG才有拓扑排序。通常，一个有向无环图可以有一个或多个拓扑排序序列。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://limitless083.cn/数据结构-拓扑排序/directed_graph.png">
-<meta property="og:updated_time" content="2017-12-06T12:55:47.956Z">
+<meta property="og:updated_time" content="2017-12-07T15:41:39.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-拓扑排序">
 <meta name="twitter:description" content="1. 概念拓扑排序是对有向无环图的顶点的一种排序，它使得如果存在一条从顶点A到顶点B的路径，那么在排序中B出现在A的后面。 在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序：①每个顶点出现且只出现一次；②若A在序列中排在B的前面，则在图中不存在从B到A的路径。 只有DAG才有拓扑排序。通常，一个有向无环图可以有一个或多个拓扑排序序列。">
@@ -404,8 +404,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-06T20:55:47+08:00">
-                2017-12-06
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-07T23:41:39+08:00">
+                2017-12-07
               </time>
             
           </span>
@@ -483,6 +483,26 @@
 <img src="/数据结构-拓扑排序/directed_graph.png" alt="有向图" title="有向图">
 <h3 id="6-参考："><a href="#6-参考：" class="headerlink" title="6.参考："></a>6.参考：</h3><p><a href="http://www.geeksforgeeks.org/topological-sorting/" target="_blank" rel="external">geeksforgeeks Topological sort</a></p>
 <p><a href="https://www.youtube.com/watch?v=ddTC4Zovtbc" target="_blank" rel="external">Youtube-Topological Sort Graph Algorithm</a></p>
+<h3 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h3><h4 id="并查集-union-find"><a href="#并查集-union-find" class="headerlink" title="并查集(union-find)"></a>并查集(union-find)</h4><p>在计算机科学中，并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。</p>
+<p>有一个联合-查找算法（union-find algorithm）定义了两个用于此数据结构的操作：</p>
+<ul>
+<li>Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。</li>
+<li>Union：将两个子集合并成同一个集合。</li>
+</ul>
+<p>由于支持这两种操作，一个不相交集也常被称为联合-查找数据结构（union-find data structure）或合并-查找集合（merge-find set）。<br>其他的重要方法，MakeSet，用于建立单元素集合。有了这些方法，许多经典的划分问题可以被解决。</p>
+<p><strong>实现</strong></p>
+<p>加权(按秩):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">long</span> data1, <span class="keyword">long</span> data2)</span> </span>&#123;</div><div class="line">	Node node1 = map.get(data1);</div><div class="line">	Node node2 = map.get(data2);</div><div class="line"></div><div class="line">	Node parent1 = findSet(node1);</div><div class="line">	Node parent2 = findSet(node2);</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (parent1.data != parent2.data) &#123;</div><div class="line">		<span class="keyword">if</span> (parent1.rank &gt;= parent2.rank) &#123;</div><div class="line">			parent1.rank = parent1.rank == parent2.rank ? parent1.rank + <span class="number">1</span> : parent1.rank; <span class="comment">//按秩，两个集合秩相同才加1</span></div><div class="line">			parent2.parent = parent1;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			parent1.parent = parent2;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>路径压缩：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">findSet</span><span class="params">(Node node)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (node.parent == node) &#123; <span class="comment">// base case</span></div><div class="line">		<span class="keyword">return</span> node;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		node.parent = findSet(node.parent); <span class="comment">//路径压缩</span></div><div class="line">		<span class="keyword">return</span> node.parent;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>复杂度</strong></p>
+<ul>
+<li><p>时间复杂度：O(α(n))</p>
+</li>
+<li><p>空间复杂度：O(n)</p>
+</li>
+</ul>
+<p><strong>完整代码</strong></p>
+<p><a href="https://github.com/limitless083/algorithm/blob/master/src/graph/DisJointSet.java" target="_blank" rel="external">使用Node的并查集</a></p>
+<p><a href="https://github.com/limitless083/algorithm/blob/master/src/graph/DisJointSet2.java" target="_blank" rel="external">使用数组的并查集</a></p>
 
       
     </div>
@@ -695,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">1.</span> <span class="nav-text">1. 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-算法"><span class="nav-number">2.</span> <span class="nav-text">2.算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何检测有向环？"><span class="nav-number">3.</span> <span class="nav-text">3.如何检测有向环？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何检测无向环"><span class="nav-number">4.</span> <span class="nav-text">4. 如何检测无向环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-有向环和无向环检测的区别"><span class="nav-number">4.1.</span> <span class="nav-text">5. 有向环和无向环检测的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-参考："><span class="nav-number">5.</span> <span class="nav-text">6.参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">1.</span> <span class="nav-text">1. 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-算法"><span class="nav-number">2.</span> <span class="nav-text">2.算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何检测有向环？"><span class="nav-number">3.</span> <span class="nav-text">3.如何检测有向环？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何检测无向环"><span class="nav-number">4.</span> <span class="nav-text">4. 如何检测无向环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-有向环和无向环检测的区别"><span class="nav-number">4.1.</span> <span class="nav-text">5. 有向环和无向环检测的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-参考："><span class="nav-number">5.</span> <span class="nav-text">6.参考：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关问题"><span class="nav-number">6.</span> <span class="nav-text">相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#并查集-union-find"><span class="nav-number">6.1.</span> <span class="nav-text">并查集(union-find)</span></a></li></ol></li></ol></div>
             
 
           </div>
