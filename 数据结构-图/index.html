@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="一、基本概念 顶点V：数据元素通常称为顶点。 边：顶点之间的无向连线 弧：顶点之间的有向连线 有向图：由一组顶点和一组有方向的边组成 无向图：由一组顶点和一组无方向的边组成 简单图：不存在顶点到其自身的边，且同一条边不重复。 边或弧很少的图称为稀疏图；边或弧较多的图称为稠密图。 度：一个顶点的度是与它相关联的边的条数 入度：有向图中到达顶点的边数。 出度：有向图中顶点出发的边数 网：带权值的图，分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T15:44:18.883Z">
+<meta property="og:updated_time" content="2017-12-08T16:43:30.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-图">
 <meta name="twitter:description" content="一、基本概念 顶点V：数据元素通常称为顶点。 边：顶点之间的无向连线 弧：顶点之间的有向连线 有向图：由一组顶点和一组有方向的边组成 无向图：由一组顶点和一组无方向的边组成 简单图：不存在顶点到其自身的边，且同一条边不重复。 边或弧很少的图称为稀疏图；边或弧较多的图称为稠密图。 度：一个顶点的度是与它相关联的边的条数 入度：有向图中到达顶点的边数。 出度：有向图中顶点出发的边数 网：带权值的图，分">
@@ -402,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-07T23:44:18+08:00">
-                2017-12-07
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-09T00:43:30+08:00">
+                2017-12-09
               </time>
             
           </span>
@@ -495,8 +495,17 @@
 </ul>
 <p>Kruskal算法和Prim算法都是依据了上述5个条件来建立的。</p>
 <h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><p>假设n个顶点分成两个集合U(包含已落在生成树上的结点)和V-U(尚未落在生成树上的顶点)，则在所有连通U中顶点和V-U中顶点的边中选取权值最小的边，就是最小生成树上的边，把对应的顶点添加到U中。</p>
+<p>优先队列主要有几个方法：</p>
+<ul>
+<li>add</li>
+<li>poll</li>
+<li>heapifyDown()</li>
+<li>heapifyUp()</li>
+</ul>
 <h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><p>思想：为使生成树上边的权值之和最小，显然，其中每一条边的权值应该尽可能小。</p>
-<p>操作：先构造一个只含n个顶点的子图SG，然后从权值最小的边开始，若它的加入不使SG中产生环，则在SG中加入这条边，如此重复，直至加上n-1条边为止。</p>
+<p>操作：使用DisJointSet，先对所有顶点makeSet，然后排序所有边(时间复杂度为O(ElogE))，接着从小到大选择边，将边对应的两个顶点所在集合合并，若两个顶点所在集合一致则不加入，直到所有顶点在一个set里(即所有点都连通了)。</p>
+<p>伪代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sort(E)</div><div class="line"><span class="keyword">for</span> vertex <span class="keyword">in</span> V:</div><div class="line">    disJointSet.makeSet(vertex.getId())</div><div class="line"><span class="keyword">for</span> edge <span class="keyword">in</span> E:</div><div class="line">    <span class="comment"># 如果disJointSet只剩一个就表明所有顶点已连通</span></div><div class="line">    <span class="keyword">if</span> (disJointSet.getCount() == <span class="number">1</span>): </div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    v1 = edge.getV1()</div><div class="line">    v2 = edge.getV2()</div><div class="line">    <span class="keyword">if</span> disJointSet.find(v1) != disJointSet.find(v2):</div><div class="line">        result.add(edge)</div><div class="line">        disJointSet.union(v1.getId(), v2.getId())</div></pre></td></tr></table></figure>
 <h3 id="五、最短路径"><a href="#五、最短路径" class="headerlink" title="五、最短路径"></a>五、最短路径</h3><ul>
 <li>Dijkstra算法</li>
 <li>Folyd算法</li>
