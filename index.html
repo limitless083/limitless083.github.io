@@ -403,7 +403,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-11T16:36:49+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-11T16:37:53+08:00">
                 2017-12-11
               </time>
             
@@ -717,7 +717,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-11T09:57:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-11T16:38:30+08:00">
                 2017-12-11
               </time>
             
@@ -763,9 +763,16 @@
 
       
         
-          
-          一、问题描述Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements i
-          ...
+          <h3 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h3><p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
+<p>Note:<br>Each of the array element will not exceed 100.<br>The array size will not exceed 200.<br>Example 1:</p>
+<p>Input: [1, 5, 11, 5]</p>
+<p>Output: true</p>
+<p>Explanation: The array can be partitioned as [1, 5, 5] and [11].</p>
+<h3 id="二、解题方法"><a href="#二、解题方法" class="headerlink" title="二、解题方法"></a>二、解题方法</h3><ol>
+<li>当数组和为奇数时，return false;</li>
+<li>当数组和尾偶数时，则需要在数组中找到一个子集，使得子集的和尾sum/2</li>
+</ol>
+<p>因此可以将题目归结为<a href="https://en.wikipedia.org/wiki/Subset_sum_problem" target="_blank" rel="external">subset sum problem</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/LeetCode-416-Partition-Equal-Subset-Sum/#more" rel="contents">
