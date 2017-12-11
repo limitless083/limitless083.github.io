@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="算法,LintCode,动态规划," />
 
 
 
@@ -119,18 +119,18 @@
 
 
 
-<meta name="description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
-<meta name="keywords" content="Linux">
+<meta name="description" content="一、问题描述给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。 二、解决方法第1步，拆分问题： 对于输入序列X,Y  设S[i][j]表示X的前i位组成的序列以及Y的前j为组成的序列的公共子序列的长度 求S[len(X) - 1][len(Y) - 1]  状态：S[i][j] 第二步，求状态转移方程：  S[i][j] = S[i-1][j-1] + 1, 若X[i] == Y[j">
+<meta name="keywords" content="算法,LintCode,动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
-<meta property="og:url" content="http://limitless083.cn/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/index.html">
+<meta property="og:title" content="LintCode-77.最长公共子序列">
+<meta property="og:url" content="http://limitless083.cn/LintCode-77-最长公共子序列/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
+<meta property="og:description" content="一、问题描述给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。 二、解决方法第1步，拆分问题： 对于输入序列X,Y  设S[i][j]表示X的前i位组成的序列以及Y的前j为组成的序列的公共子序列的长度 求S[len(X) - 1][len(Y) - 1]  状态：S[i][j] 第二步，求状态转移方程：  S[i][j] = S[i-1][j-1] + 1, 若X[i] == Y[j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T16:39:54.653Z">
+<meta property="og:updated_time" content="2017-12-11T07:09:39.847Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
-<meta name="twitter:description" content="遇到的问题 执行inotifywait过程中出现upper limit on inotify watches reached  解决方式增加/proc/sys/fs/inotify/max_user_watches /proc/sys/fs/inotify/max_user_watches 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。">
+<meta name="twitter:title" content="LintCode-77.最长公共子序列">
+<meta name="twitter:description" content="一、问题描述给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。 二、解决方法第1步，拆分问题： 对于输入序列X,Y  设S[i][j]表示X的前i位组成的序列以及Y的前j为组成的序列的公共子序列的长度 求S[len(X) - 1][len(Y) - 1]  状态：S[i][j] 第二步，求状态转移方程：  S[i][j] = S[i-1][j-1] + 1, 若X[i] == Y[j">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/"/>
+  <link rel="canonical" href="http://limitless083.cn/LintCode-77-最长公共子序列/"/>
 
 
 
 
 
-  <title>执行inotifywait过程出现upper limit on inotify watches reached的解决方式 | limitless blog</title>
+  <title>LintCode-77.最长公共子序列 | limitless blog</title>
   
 
 
@@ -357,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/LintCode-77-最长公共子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -374,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">执行inotifywait过程出现upper limit on inotify watches reached的解决方式</h1>
+          <h1 class="post-title" itemprop="name headline">LintCode-77.最长公共子序列</h1>
         
 
         <div class="post-meta">
@@ -386,8 +386,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T00:34:38+08:00">
-                2017-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T15:08:39+08:00">
+                2017-12-11
               </time>
             
 
@@ -402,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-20T00:39:54+08:00">
-                2017-09-20
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-11T15:09:39+08:00">
+                2017-12-11
               </time>
             
           </span>
@@ -416,7 +416,7 @@
 
           
           
-             <span id="/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/" class="leancloud_visitors" data-flag-title="执行inotifywait过程出现upper limit on inotify watches reached的解决方式">
+             <span id="/LintCode-77-最长公共子序列/" class="leancloud_visitors" data-flag-title="LintCode-77.最长公共子序列">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,43 +447,37 @@
       
 
       
-        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><blockquote>
-<p>执行inotifywait过程中出现upper limit on inotify watches reached</p>
+        <h3 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h3><p>给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。</p>
+<h3 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h3><p>第1步，拆分问题：</p>
+<p>对于输入序列X,Y</p>
+<blockquote>
+<p>设S[i][j]表示X的前i位组成的序列以及Y的前j为组成的序列的公共子序列的长度</p>
+<p>求S[len(X) - 1][len(Y) - 1]</p>
 </blockquote>
-<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h3><p>增加<code>/proc/sys/fs/inotify/max_user_watches</code></p>
-<p><code>/proc/sys/fs/inotify/max_user_watches</code> 表示每个inotify instatnces可监控的最大目录数量，在相关知识部分可以了解一下inotify。</p>
-<h3 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h3><ol>
-<li><p>检查一下inotify watches的最大值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/sys/fs/inotify/max_user_watches</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置inotify watches(以root权限)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 临时的</div><div class="line">sysctl fs.inotify.max_user_watches=81960</div><div class="line"></div><div class="line"># 永久的</div><div class="line">vi /etc/sysctl.conf</div><div class="line">添加 fs.inotify.max_user_watches=81960</div><div class="line"># 重新加载sysctl配置</div><div class="line">sysctl -p</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h3><h4 id="sysctl"><a href="#sysctl" class="headerlink" title="sysctl"></a>sysctl</h4><p>sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中</p>
-<p>常见用法:</p>
+<p>状态：S[i][j]</p>
+<p>第二步，求状态转移方程：</p>
 <ul>
-<li><code>sysctl -a</code> 列出所有可读变量</li>
-<li><code>sysctl variable=value</code> 设置指定变量(临时的,若要永久的可以更改/etc/sysctl.conf文件)</li>
-<li><code>sysctl -p</code> 从配置文件“/etc/sysctl.conf”加载内核参数设置</li>
+<li>S[i][j] = S[i-1][j-1] + 1, 若X[i] == Y[j] </li>
+<li>S[i][j] = max(S[i-1][j], S[i][j-1]), 若X[i] != Y[j] (由于不需要连续，则X[i]和Y[j]不相等也是有值的，而对于最长公共子串来说，不相等则等于0)。</li>
 </ul>
-<p>参考：<a href="http://man.linuxde.net/sysctl" target="_blank" rel="external">Linux命令大全-sysctl命令</a></p>
-<h4 id="inotify"><a href="#inotify" class="headerlink" title="inotify"></a>inotify</h4><p>Inotify为Linux提供了一套高效监控和跟踪文件变化的机制，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化，它采用的是事件驱动机制，不是轮询机制。</p>
-<p>在Linux中提供了inotify-tools，该工具包含了两个命令inotifywait和inotifywatch,分别用来收集有关文件访问信息和关于被监视的文件系统的统计信息。</p>
-<p>常见用法：</p>
+<p>第三步，求状态初始值：</p>
 <ul>
-<li><code>inotifywait -mrq --timefmt &#39;%d/%m/%y/%H:%M&#39; --format &#39;%T %w %f&#39; -e create /dir</code> 监听目录创建文件的事件。</li>
+<li>S[i][0] = X[i] == Y[0] ? 1 : 0;</li>
+<li>S[0][j] = X[0] == Y[j] ? 1 : 0;</li>
 </ul>
-<p>参考: <a href="http://man.linuxde.net/inotifywait" target="_blank" rel="external">Linux命令大全-inotifywait</a>　<a href="https://www.infoq.com/articles/inotify-linux-file-system-event-monitoring" target="_blank" rel="external">Inotify: Efficient, Real-Time Linux File System Event Monitoring</a></p>
-<h4 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a>rsync</h4><p>rsync是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件。它使用所谓的“Rsync演算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。所以通常可以作为备份工具来使用。</p>
-<p>rsync的不足之处：rsync同步数据时，需要扫描所有文件后进行比对，进行差量传输。如果文件数量达到了百万甚至千万量级，扫描所有文件将是非常耗时的。因此常常使用rsync+inotify组合来实时同步数据。</p>
-<p>常见用法:</p>
+<p>第四步，根据递推得出结果</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line"><span class="comment">     * @param A: A string</span></div><div class="line"><span class="comment">     * @param B: A string</span></div><div class="line"><span class="comment">     * @return: The length of longest common subsequence of A and B</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(String A, String B)</span> </span>&#123;</div><div class="line">        <span class="comment">// write your code here</span></div><div class="line">        <span class="keyword">char</span>[] x = A.toCharArray();</div><div class="line">        <span class="keyword">char</span>[] y = B.toCharArray();</div><div class="line">        <span class="keyword">int</span> m = x.length;</div><div class="line">        <span class="keyword">int</span> n = y.length;</div><div class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</div><div class="line">        <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="comment">// 状态定义 dp[i][j]表示A的第i位,B的第j位前的最长公共子序列</span></div><div class="line">        </div><div class="line">        <span class="comment">// 状态初始值</span></div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</div><div class="line">            dp[i][<span class="number">0</span>] = x[i] == y[<span class="number">0</span>] ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">            dp[<span class="number">0</span>][j] = x[<span class="number">0</span>] == y[j] ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 状态转移</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="keyword">int</span> same = x[i] == y[j] ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">                dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + same, Math.max(dp[i][j-<span class="number">1</span>], dp[i-<span class="number">1</span>][j]));               </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="三、相关问题"><a href="#三、相关问题" class="headerlink" title="三、相关问题"></a>三、相关问题</h3><h4 id="LintCode-79-最长公共子串："><a href="#LintCode-79-最长公共子串：" class="headerlink" title="LintCode-79.最长公共子串："></a>LintCode-79.最长公共子串：</h4><p>状态转移方程：</p>
 <ul>
-<li><code>rsync -a /data /backup</code> 从/data目录同步文件到/backup目录</li>
-<li><code>rsync -v rsync://192.168.78.192/www</code> 列远程机的文件列表。</li>
+<li>S[i][j] = X[i] == Y[j] ? S[i-1][j-1] + 1 : 0;</li>
 </ul>
-<p>参考: <a href="http://man.linuxde.net/rsync" target="_blank" rel="external">Linux命令大全-rsync</a></p>
+<p>状态初始值：</p>
+<ul>
+<li>S[i][0] = X[i] == Y[0] ? 1 : 0;</li>
+<li>S[0][j] = X[0] == Y[j] ? 1 : 0;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line"><span class="comment">     * @param A: A string</span></div><div class="line"><span class="comment">     * @param B: A string</span></div><div class="line"><span class="comment">     * @return: the length of the longest common substring.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubstring</span><span class="params">(String A, String B)</span> </span>&#123;</div><div class="line">        <span class="comment">// write your code here</span></div><div class="line">        <span class="keyword">char</span>[] x = A.toCharArray();</div><div class="line">        <span class="keyword">char</span>[] y = B.toCharArray();</div><div class="line">        <span class="keyword">int</span> m = x.length;</div><div class="line">        <span class="keyword">int</span> n = y.length;</div><div class="line">        <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</div><div class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</div><div class="line">            dp[i][<span class="number">0</span>] = x[i] == y[<span class="number">0</span>] ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span> (max &lt; dp[i][<span class="number">0</span>]) &#123;</div><div class="line">                max = dp[i][<span class="number">0</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">            dp[<span class="number">0</span>][j] = x[<span class="number">0</span>] == y[j] ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span> (max &lt; dp[<span class="number">0</span>][j]) &#123;</div><div class="line">                max = dp[<span class="number">0</span>][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</div><div class="line">                dp[i][j] = x[i] == y[j] ? dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">                <span class="keyword">if</span> (max &lt; dp[i][j]) &#123;</div><div class="line">                    max = dp[i][j];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -530,7 +524,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/LintCode/" rel="tag"># LintCode</a>
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
           
         </div>
       
@@ -543,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Linux命令-find, grep和xargs的爱恨情仇/" rel="next" title="Linux命令:find, grep和xargs的爱恨情仇">
-                <i class="fa fa-chevron-left"></i> Linux命令:find, grep和xargs的爱恨情仇
+              <a href="/LeetCode-416-Partition-Equal-Subset-Sum/" rel="next" title="LeetCode-416. Partition Equal Subset Sum">
+                <i class="fa fa-chevron-left"></i> LeetCode-416. Partition Equal Subset Sum
               </a>
             
           </div>
@@ -552,10 +550,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/GitHub+Hexo搭建博客/" rel="prev" title="GitHub+Hexo搭建博客">
-                GitHub+Hexo搭建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -700,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方式"><span class="nav-number">2.</span> <span class="nav-text">解决方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决步骤"><span class="nav-number">3.</span> <span class="nav-text">解决步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关知识"><span class="nav-number">4.</span> <span class="nav-text">相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sysctl"><span class="nav-number">4.1.</span> <span class="nav-text">sysctl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inotify"><span class="nav-number">4.2.</span> <span class="nav-text">inotify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rsync"><span class="nav-number">4.3.</span> <span class="nav-text">rsync</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、问题描述"><span class="nav-number">1.</span> <span class="nav-text">一、问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、解决方法"><span class="nav-number">2.</span> <span class="nav-text">二、解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、相关问题"><span class="nav-number">3.</span> <span class="nav-text">三、相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LintCode-79-最长公共子串："><span class="nav-number">3.1.</span> <span class="nav-text">LintCode-79.最长公共子串：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -842,9 +836,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/执行inotifywait过程出现upper limit on inotify watches reached的解决方式/';
-          this.page.identifier = '执行inotifywait过程出现upper limit on inotify watches reached的解决方式/';
-          this.page.title = '执行inotifywait过程出现upper limit on inotify watches reached的解决方式';
+          this.page.url = 'http://limitless083.cn/LintCode-77-最长公共子序列/';
+          this.page.identifier = 'LintCode-77-最长公共子序列/';
+          this.page.title = 'LintCode-77.最长公共子序列';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';
