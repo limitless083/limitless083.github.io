@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="limitless blog">
 <meta property="og:description" content="一、概念回溯法（英语：backtracking）是暴力搜寻法中的一种。对于某些计算问题而言，回溯法是一种可以找出所有（或一部分）解的一般性算法，尤其适用于约束满足问题（在解决约束满足问题时，我们逐步构造更多的候选解，并且在确定某一部分候选解不可能补全成正确解之后放弃继续搜索这个部分候选解本身及其可以拓展出的子候选解，转而测试其他的部分候选解）。 许多复杂的，规模较大的问题都可以使用回溯法，有“通用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-12T14:02:42.731Z">
+<meta property="og:updated_time" content="2017-12-12T14:28:35.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯法">
 <meta name="twitter:description" content="一、概念回溯法（英语：backtracking）是暴力搜寻法中的一种。对于某些计算问题而言，回溯法是一种可以找出所有（或一部分）解的一般性算法，尤其适用于约束满足问题（在解决约束满足问题时，我们逐步构造更多的候选解，并且在确定某一部分候选解不可能补全成正确解之后放弃继续搜索这个部分候选解本身及其可以拓展出的子候选解，转而测试其他的部分候选解）。 许多复杂的，规模较大的问题都可以使用回溯法，有“通用">
@@ -402,7 +402,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-12T22:02:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-12T22:28:35+08:00">
                 2017-12-12
               </time>
             
@@ -452,7 +452,7 @@
 <p>若用回溯法求问题的所有解时，要回溯到根，且根结点的所有可行的子树都要已被搜索遍才结束。<br>而若使用回溯法求任一个解时，只要搜索到问题的一个解就可以结束。</p>
 <h3 id="二、基本思想"><a href="#二、基本思想" class="headerlink" title="二、基本思想"></a>二、基本思想</h3><p>回溯法的基本思想是按照输入数组的顺序，每一层递归处理一个元素，当处理到最后一层的时候，也就是把数组中的所有元素都处理完的时候，把当前结果加入到最后的返回结果中。值得注意的是，每次在递归到下一层之前，我们加入了某个要处理的元素X，在下一层递归返回之后，我们要把之前加入的元素X从当前结果中取出来。如果我们不把元素X取出来，那么在下一次循环中，我们还会加入新的元素Y。那么在这一层递归中就相当于处理了不止一个新元素。</p>
 <a id="more"></a>
-<h3 id="三、框架"><a href="#三、框架" class="headerlink" title="三、框架"></a>三、框架</h3><h4 id="1-递归形式"><a href="#1-递归形式" class="headerlink" title="1. 递归形式"></a>1. 递归形式</h4><p>伪代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">backtracking(当前状态) &#123;</div><div class="line">    <span class="keyword">if</span> 当前状态达到目标：</div><div class="line">        输出结果或记录</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; <span class="comment">//枚举所有路径</span></div><div class="line">        <span class="keyword">if</span> (constrain(i)) &#123;</div><div class="line">            board[i] = <span class="number">1</span>; <span class="comment">//修改全局变量</span></div><div class="line">            backtracking(下一状态);</div><div class="line">            board[i] = <span class="number">0</span>; <span class="comment">//恢复全局变量，回溯之前的清理</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="三、框架"><a href="#三、框架" class="headerlink" title="三、框架"></a>三、框架</h3><h4 id="1-递归形式"><a href="#1-递归形式" class="headerlink" title="1. 递归形式"></a>1. 递归形式</h4><p>伪代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">backtracking(当前状态) &#123;</div><div class="line">    <span class="keyword">if</span> 当前状态达到目标：</div><div class="line">        输出结果或记录</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = 下界; i &lt; 上界; i++) &#123; <span class="comment">//枚举当前状态下所有路径</span></div><div class="line">        <span class="keyword">if</span> (constrain(i)) &#123;</div><div class="line">            board[i] = <span class="number">1</span>; <span class="comment">//修改全局变量</span></div><div class="line">            backtracking(下一状态);</div><div class="line">            board[i] = <span class="number">0</span>; <span class="comment">//恢复全局变量，回溯之前的清理</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="2-非递归形式"><a href="#2-非递归形式" class="headerlink" title="2. 非递归形式"></a>2. 非递归形式</h4><p>伪代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (有路径可走 &amp;&amp; 未达到目标) &#123;</div><div class="line">    <span class="keyword">for</span> 在解空间找解</div><div class="line">    <span class="keyword">if</span> 找到解 &#123;</div><div class="line">        <span class="keyword">if</span> 达到目标 &#123;</div><div class="line">            记录解或输出结果</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            到下一个子问题找解，i++</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        i--;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="四、扩展：递归转非递归"><a href="#四、扩展：递归转非递归" class="headerlink" title="四、扩展：递归转非递归"></a>四、扩展：递归转非递归</h3><blockquote>
 <p>递归的基本思想是把规模大的问题转化为规模小的相似的子问题来解决。在函数实现时，因为解决大问题的方法和解决小问题的方法往往是同一个方法，所以就产生了函数调用它自身的情况。另外这个解决问题的函数必须有明显的结束条件，这样就不会产生无限递归的情况了</p>
@@ -538,6 +538,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/LeetCode-回溯问题/" rel="prev" title="LeetCode-回溯问题">
+                LeetCode-回溯问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -619,7 +623,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
