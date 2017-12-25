@@ -450,15 +450,15 @@
 
       
         <p>Hexo有多种方式插入图片，以下讲解其中三种方式。</p>
-<h3 id="一、通过Markdown语法引用"><a href="#一、通过Markdown语法引用" class="headerlink" title="一、通过Markdown语法引用"></a>一、通过Markdown语法引用</h3><p>将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 <code>![](/images/example.jpg)</code> 即可。</p>
+<h3><span id="一-通过markdown语法引用">一、通过Markdown语法引用</span></h3><p>将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 <code>![](/images/example.jpg)</code> 即可。</p>
 <p>这种方法针对的是在hexo整个项目中有少量的图片的情况，且 <code>_config.yml</code> 中 <code>post_asset_folder</code> 必须为 <code>false</code> 才能引用。</p>
-<h3 id="二、通过标签插件引用"><a href="#二、通过标签插件引用" class="headerlink" title="二、通过标签插件引用"></a>二、通过标签插件引用</h3><p>在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。</p>
+<h3><span id="二-通过标签插件引用">二、通过标签插件引用</span></h3><p>在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。</p>
 <p>设置<code>_config.yml</code> 中 <code>post_asset_folder</code> 为 <code>true</code> 可以使每一次<code>hexo new post postname</code>都创建一个postname的文件夹和postname.md的文件。</p>
 <p>把图片 example.jpg 放到postname文件夹中，然后在md文件里使用下面方式引用：</p>
 
 {% asset_img example.jpg This is an example image %}
 
-<h3 id="三、CDN引用"><a href="#三、CDN引用" class="headerlink" title="三、CDN引用"></a>三、CDN引用</h3><p>将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。</p>
+<h3><span id="三-cdn引用">三、CDN引用</span></h3><p>将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。</p>
 <a id="more"></a>
 <hr>
 <p>图片测试：</p>
@@ -681,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、通过Markdown语法引用"><span class="nav-number">1.</span> <span class="nav-text">一、通过Markdown语法引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、通过标签插件引用"><span class="nav-number">2.</span> <span class="nav-text">二、通过标签插件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、CDN引用"><span class="nav-number">3.</span> <span class="nav-text">三、CDN引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、通过Markdown语法引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二、通过标签插件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三、CDN引用</span></a></li></ol></div>
             
 
           </div>

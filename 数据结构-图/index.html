@@ -449,7 +449,7 @@
       
 
       
-        <h3 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h3><ul>
+        <h3><span id="一-基本概念">一、基本概念</span></h3><ul>
 <li>顶点V：数据元素通常称为顶点。</li>
 <li>边：顶点之间的无向连线</li>
 <li>弧：顶点之间的有向连线</li>
@@ -476,17 +476,17 @@
 <li>生成树森林：在连通图中每个连通分量，都可以得到一颗生成树，这些生成树构成生成森林。</li>
 </ul>
 <a id="more"></a>
-<h3 id="二、图的存储结构"><a href="#二、图的存储结构" class="headerlink" title="二、图的存储结构"></a>二、图的存储结构</h3><h4 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1. 邻接矩阵"></a>1. 邻接矩阵</h4><p>使用二维数组表示顶点之间相邻关系的矩阵。</p>
+<h3><span id="二-图的存储结构">二、图的存储结构</span></h3><h4><span id="1-邻接矩阵">1. 邻接矩阵</span></h4><p>使用二维数组表示顶点之间相邻关系的矩阵。</p>
 <p>arc[i,j] = 1((v[i], v[j]) ∈E或 <v[i],v[j]> ∈E)</v[i],v[j]></p>
 <p>1()为指示器函数</p>
-<h4 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2. 邻接表"></a>2. 邻接表</h4><p>邻接表表示法类似于树的孩子链表表示法，用顺序结构存放节点，用链式结构存储弧。</p>
-<h4 id="3-十字链表"><a href="#3-十字链表" class="headerlink" title="3. 十字链表"></a>3. 十字链表</h4><p>邻接表和逆邻接表的结合，方便同时求出度和入度。</p>
-<h4 id="4-邻接多重表"><a href="#4-邻接多重表" class="headerlink" title="4. 邻接多重表"></a>4. 邻接多重表</h4><h4 id="5-边集数组"><a href="#5-边集数组" class="headerlink" title="5. 边集数组"></a>5. 边集数组</h4><p>利用两个一维数组，其中一个数组存储图中的顶点，另一个数组存储图中的边。在存储边的数组中，每个数组元素存储一条边的起点、终点和权值，在数组中的次序可以任意安排。</p>
-<h3 id="三、图的遍历"><a href="#三、图的遍历" class="headerlink" title="三、图的遍历"></a>三、图的遍历</h3><ul>
+<h4><span id="2-邻接表">2. 邻接表</span></h4><p>邻接表表示法类似于树的孩子链表表示法，用顺序结构存放节点，用链式结构存储弧。</p>
+<h4><span id="3-十字链表">3. 十字链表</span></h4><p>邻接表和逆邻接表的结合，方便同时求出度和入度。</p>
+<h4><span id="4-邻接多重表">4. 邻接多重表</span></h4><h4><span id="5-边集数组">5. 边集数组</span></h4><p>利用两个一维数组，其中一个数组存储图中的顶点，另一个数组存储图中的边。在存储边的数组中，每个数组元素存储一条边的起点、终点和权值，在数组中的次序可以任意安排。</p>
+<h3><span id="三-图的遍历">三、图的遍历</span></h3><ul>
 <li>深度优先搜索(DFS)</li>
 <li>广度优先搜索(BFS)</li>
 </ul>
-<h3 id="四、最小生成树"><a href="#四、最小生成树" class="headerlink" title="四、最小生成树"></a>四、最小生成树</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>图的生成树是它的一棵含有其所有顶点的无环连通子图。一副加权图的最小生成树是它的一棵权值（树中所有边的权值之和）最小的生成树。</p>
+<h3><span id="四-最小生成树">四、最小生成树</span></h3><h4><span id="基本概念">基本概念</span></h4><p>图的生成树是它的一棵含有其所有顶点的无环连通子图。一副加权图的最小生成树是它的一棵权值（树中所有边的权值之和）最小的生成树。</p>
 <p>当且仅当一幅含有V个节点的图G满足下列5个条件之一时，它就是一棵树：</p>
 <ul>
 <li>G有V-1条边且不含有环</li>
@@ -496,7 +496,7 @@
 <li>G中的任意一对顶点之间仅润在一条简单路径。</li>
 </ul>
 <p>Kruskal算法和Prim算法都是依据了上述5个条件来建立的。</p>
-<h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><p>假设n个顶点分成两个集合U(包含已落在生成树上的结点)和V-U(尚未落在生成树上的顶点)，则在所有连通U中顶点和V-U中顶点的边中选取权值最小的边，就是最小生成树上的边，把对应的顶点添加到U中。具体做法和dijkstra算法类似, Prim算法是找到某个顶点的某条边的值最小，而dijkstra则是找到某个顶点的路径值最小，因此dijkstra需要累加。</p>
+<h4><span id="prim算法">Prim算法</span></h4><p>假设n个顶点分成两个集合U(包含已落在生成树上的结点)和V-U(尚未落在生成树上的顶点)，则在所有连通U中顶点和V-U中顶点的边中选取权值最小的边，就是最小生成树上的边，把对应的顶点添加到U中。具体做法和dijkstra算法类似, Prim算法是找到某个顶点的某条边的值最小，而dijkstra则是找到某个顶点的路径值最小，因此dijkstra需要累加。</p>
 <p>优先队列主要有几个方法：</p>
 <ul>
 <li>add</li>
@@ -507,11 +507,11 @@
 <p>时间复杂度：简易实现是O(|V|^2), 使用二叉堆实现是O(|E|log|V|)</p>
 <p>代码：<a href="https://github.com/limitless083/algorithm/blob/master/src/graph/Prim.java" target="_blank" rel="external">no heap Prim</a></p>
 <p><a href="https://www.youtube.com/watch?v=oP2-8ysT3QQ" target="_blank" rel="external">Prim’s Algorithm Minimum Spanning Tree Graph Algorithm</a></p>
-<h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><p>思想：为使生成树上边的权值之和最小，显然，其中每一条边的权值应该尽可能小。</p>
+<h4><span id="kruskal算法">Kruskal算法</span></h4><p>思想：为使生成树上边的权值之和最小，显然，其中每一条边的权值应该尽可能小。</p>
 <p>操作：使用DisJointSet，先对所有顶点makeSet，然后排序所有边(时间复杂度为O(ElogE))，接着从小到大选择边，将边对应的两个顶点所在集合合并，若两个顶点所在集合一致则不加入，直到所有顶点在一个set里(即所有点都连通了)。</p>
 <p>伪代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sort(E)</div><div class="line"><span class="keyword">for</span> vertex <span class="keyword">in</span> V:</div><div class="line">    disJointSet.makeSet(vertex.getId())</div><div class="line"><span class="keyword">for</span> edge <span class="keyword">in</span> E:</div><div class="line">    <span class="comment"># 如果disJointSet只剩一个就表明所有顶点已连通</span></div><div class="line">    <span class="keyword">if</span> (disJointSet.getCount() == <span class="number">1</span>): </div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    v1 = edge.getV1()</div><div class="line">    v2 = edge.getV2()</div><div class="line">    <span class="keyword">if</span> disJointSet.find(v1) != disJointSet.find(v2):</div><div class="line">        result.add(edge)</div><div class="line">        disJointSet.union(v1.getId(), v2.getId())</div></pre></td></tr></table></figure>
-<h3 id="五、最短路径"><a href="#五、最短路径" class="headerlink" title="五、最短路径"></a>五、最短路径</h3><h4 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h4><p>单源到任意顶点的最短路， 使用binary heap和贪心算法做。</p>
+<h3><span id="五-最短路径">五、最短路径</span></h3><h4><span id="dijkstra算法">Dijkstra算法</span></h4><p>单源到任意顶点的最短路， 使用binary heap和贪心算法做。</p>
 <p>步骤：</p>
 <ul>
 <li>找出从源点能够直接到达的顶点的所有路径，从中选出一条最短的路径；</li>
@@ -521,7 +521,7 @@
 <p>时间复杂度：若不采用最小优先队列，时间复杂度为O(|V|^2)，否则为O(|E|log|V|).</p>
 <img src="/数据结构-图/Dijkstra_Animation.gif" alt="Dijkstra算法" title="Dijkstra算法">
 <p><a href="https://www.youtube.com/watch?v=gdmfOwyQlcI" target="_blank" rel="external">Youtube-Dijkstra’s Shortest Path Algorithm</a></p>
-<h4 id="Folyd算法"><a href="#Folyd算法" class="headerlink" title="Folyd算法"></a>Folyd算法</h4><h3 id="六、拓扑排序"><a href="#六、拓扑排序" class="headerlink" title="六、拓扑排序"></a>六、拓扑排序</h3><p><a href="http://limitless083.cn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/#more">拓扑排序</a></p>
+<h4><span id="folyd算法">Folyd算法</span></h4><h3><span id="六-拓扑排序">六、拓扑排序</span></h3><p><a href="http://limitless083.cn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/#more">拓扑排序</a></p>
 
       
     </div>
@@ -742,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、基本概念"><span class="nav-number">1.</span> <span class="nav-text">一、基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、图的存储结构"><span class="nav-number">2.</span> <span class="nav-text">二、图的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-邻接矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">1. 邻接矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-邻接表"><span class="nav-number">2.2.</span> <span class="nav-text">2. 邻接表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-十字链表"><span class="nav-number">2.3.</span> <span class="nav-text">3. 十字链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-邻接多重表"><span class="nav-number">2.4.</span> <span class="nav-text">4. 邻接多重表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-边集数组"><span class="nav-number">2.5.</span> <span class="nav-text">5. 边集数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、图的遍历"><span class="nav-number">3.</span> <span class="nav-text">三、图的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、最小生成树"><span class="nav-number">4.</span> <span class="nav-text">四、最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">4.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prim算法"><span class="nav-number">4.2.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kruskal算法"><span class="nav-number">4.3.</span> <span class="nav-text">Kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、最短路径"><span class="nav-number">5.</span> <span class="nav-text">五、最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dijkstra算法"><span class="nav-number">5.1.</span> <span class="nav-text">Dijkstra算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Folyd算法"><span class="nav-number">5.2.</span> <span class="nav-text">Folyd算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、拓扑排序"><span class="nav-number">6.</span> <span class="nav-text">六、拓扑排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二、图的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1. 邻接矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">2. 邻接表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">3. 十字链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.4.</span> <span class="nav-text">4. 邻接多重表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.5.</span> <span class="nav-text">5. 边集数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三、图的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">四、最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">Kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">五、最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">Dijkstra算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.2.</span> <span class="nav-text">Folyd算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">六、拓扑排序</span></a></li></ol></div>
             
 
           </div>

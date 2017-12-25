@@ -455,10 +455,10 @@
 <p>返回: 4</p>
 </blockquote>
 <hr>
-<h3 id="一、单循环链表法"><a href="#一、单循环链表法" class="headerlink" title="一、单循环链表法"></a>一、单循环链表法</h3><p>构建单循环链表，遇到被kill的编号则删除节点，直到最后留下一个节点。此种方法较为简单直接，不作具体展开。</p>
+<h3><span id="一-单循环链表法">一、单循环链表法</span></h3><p>构建单循环链表，遇到被kill的编号则删除节点，直到最后留下一个节点。此种方法较为简单直接，不作具体展开。</p>
 <p>时间复杂度：O(n*m)</p>
 <a id="more"></a>
-<h3 id="二、递推法"><a href="#二、递推法" class="headerlink" title="二、递推法"></a>二、递推法</h3><p>初始情况：0,1,2,3,4…,n-1(共n个人)，0为第一个人的编号</p>
+<h3><span id="二-递推法">二、递推法</span></h3><p>初始情况：0,1,2,3,4…,n-1(共n个人)，0为第一个人的编号</p>
 <p>第一个被kill的人的编号是 (m-1) % n，分析过程如下：</p>
 <ul>
 <li>当m &lt;= n 时，比如m=3，n=5，则第一个被kill的编号为0，即 (m-1)%n</li>
@@ -489,7 +489,7 @@
 <p>f(n, 2) = 2*t + 1</p>
 </blockquote>
 <p><code>注：比如当n = 5, m = 5时，第一个被kill的编号为5，是(m-1) % n + 1，内部式子减掉1，取余后再加1即可得到5。</code></p>
-<h5 id="代码实现见-github："><a href="#代码实现见-github：" class="headerlink" title="代码实现见 github："></a>代码实现见 <a href="https://github.com/limitless083/algorithm/blob/master/src/problems/Josephus.java" target="_blank" rel="external">github</a>：</h5><ol>
+<h5><span id="代码实现见-github">代码实现见 ：</span></h5><ol>
 <li><p>迭代版</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Joseph</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span> || m &lt; <span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> last = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</div><div class="line">            last = (last + m - <span class="number">1</span>) % i + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> last;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -721,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、单循环链表法"><span class="nav-number">1.</span> <span class="nav-text">一、单循环链表法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、递推法"><span class="nav-number">2.</span> <span class="nav-text">二、递推法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现见-github："><span class="nav-number">2.0.1.</span> <span class="nav-text">代码实现见 github：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、单循环链表法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二、递推法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">代码实现见 ：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
