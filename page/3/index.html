@@ -356,6 +356,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/数据结构-哈希表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="limitless083">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="limitless blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/数据结构-哈希表/" itemprop="url">数据结构-哈希表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T23:38:32+08:00">
+                2017-10-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-03T15:44:33+08:00">
+                2017-11-03
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/数据结构-哈希表/" class="leancloud_visitors" data-flag-title="数据结构-哈希表">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>查找的实质是确定关键码等于给定值的记录在查找集合中的存储位置。</p>
+<p>由于存储位置与关键码之间不存在确定的对应关系，一般的查找方法是通过<code>比较</code>的方法找到要查询的记录。</p>
+<p>若存储位置与关键码之间存在对应关系，则可以通过<code>计算</code>的方式来查找，这种方式就是散列技术.</p>
+<h3 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h3><ul>
+<li>若关键字为 key，则其值存放在H(key)的存储位置上。由此，不需比较便可直接取得所查记录。称这个对应关系H为<code>散列函数</code>，按这个思想建立的表为<code>散列表</code>，也叫<code>哈希表</code>。</li>
+<li>散列过程：①存储记录，通过H(key)计算记录的散列地址，并按此地址存储记录；②查找记录，通过同样的H(key)计算记录的散列地址，按此地址访问该记录。</li>
+<li>现实中，对不同的关键字可能得到同一散列地址，即key1≠key2，而H(kye1)=H(key2)，则产生了<code>冲突</code>，针对冲突有多种解决方式。</li>
+</ul>
+<p>哈希表的实现主要需要解决两个问题，<code>哈希函数</code>和<code>冲突处理</code>。</p>
+<h3 id="三、散列函数-哈希函数"><a href="#三、散列函数-哈希函数" class="headerlink" title="三、散列函数(哈希函数)"></a>三、散列函数(哈希函数)</h3><p>哈希查找第一步就是使用哈希函数将键映射成索引。这种映射函数就是哈希函数。如果我们有一个保存0-M数组，那么我们就需要一个能够将任意键转换为该数组范围内的索引（0~M-1）的哈希函数。哈希函数需要易于计算并且能够均匀分布所有键。</p>
+<h4 id="1-直接定址法"><a href="#1-直接定址法" class="headerlink" title="1. 直接定址法"></a>1. 直接定址法</h4><p>取关键字或关键字的某个线性函数值为散列地址。H(key) = a * k + b</p>
+<h4 id="2-除留余数法"><a href="#2-除留余数法" class="headerlink" title="2. 除留余数法"></a>2. 除留余数法</h4><p>取关键字被某个不大于散列表表长m的数p除后所得的余数为散列地址。H(key) = key % p, p &lt;= m.其中p一般选取为小于或等于散列表长度m的某个最大素数。这种方法计算简单且效果好，因此最常用。</p>
+<h4 id="3-数字分析法"><a href="#3-数字分析法" class="headerlink" title="3. 数字分析法"></a>3. 数字分析法</h4><p>在已知所有关键码，并对每一位的取值分布有所分析的情况下，可以取关键字的若干数位（分布均匀的数位）组合成为哈希地址。</p>
+<h4 id="4-平方取中法"><a href="#4-平方取中法" class="headerlink" title="4. 平方取中法"></a>4. 平方取中法</h4><p>取关键字平方后的中间几位为哈希地址。通常在选定哈希函数时不一定能知道关键字的全部情况，取其中的哪几位也不一定合适，而一个数平方后的中间几位数和数的每一位都相关，由此使随机分布的关键字得到的哈希地址也是随机的。取的位数由表长决定。</p>
+<h4 id="5-折叠法"><a href="#5-折叠法" class="headerlink" title="5. 折叠法"></a>5. 折叠法</h4><p>将关键码从左到右分割成位数相等（根据散列表长的位数决定）的若干部分，然后取他们的叠加并舍弃最高进位后的结果为哈希地址。</p>
+<p>叠加的方法有两种：</p>
+<ul>
+<li>移位叠加：将各部分相加。</li>
+<li>间界叠加：从一端到另一端沿各部分分界来回折叠后相加，其中奇数段为正序，偶数段为倒序。</li>
+</ul>
+<p>如key=25346358705，散列表长为三位数，则可以将关键码三位一分割，得到253,463,587,05。</p>
+<p>移位叠加：(253+463+587+05) = 1308 舍弃最高进位得308。</p>
+<p>间界叠加：(253+364+587+50) = 1254 舍弃最高进位得254。</p>
+<p>这种方法适用于关键字的数字位数特别多的情况。</p>
+<h3 id="四、冲突处理"><a href="#四、冲突处理" class="headerlink" title="四、冲突处理"></a>四、冲突处理</h3><p>尽管散列函数的目标是使得冲突最少，但实际上冲突是无法避免的。因此，我们必须研究冲突解决策略。</p>
+<p>冲突处理实质上是为产生冲突的地址寻找下一个地址。</p>
+<p>冲突处理的方法有以下几种：</p>
+<h4 id="1-开放地址法-open-addressing"><a href="#1-开放地址法-open-addressing" class="headerlink" title="1. 开放地址法(open addressing)"></a>1. 开放地址法(open addressing)</h4><p>当冲突发生时，使用某种方法在散列表中形成一个探测序列，沿着此探测序列逐个单元地查找，直到找到给定的关键码或者碰到一个开放的地址为止。</p>
+<p>形成探测序列的方法不同，所得到的解决冲突的方法也不同。</p>
+<p>哈希地址的计算公式为：</p>
+<p>H=(H(key) + di) % m</p>
+<p>其中m为散列表的长度，di表示探测序列。</p>
+<p>不同的di，会产生不同的探测法。</p>
+<ul>
+<li>线性探测法，di=1,2,3,…,m-1。此种方法会造成聚集(cluster)现象，产生一次聚集。</li>
+<li>平方探测法，di=1^2, 2^2, 3^2, …, k^2(k&lt;=m/2)。此种方法解决了线性探测法的一次聚集，但还是会产生二次聚集。</li>
+<li>随机探测法，di是一组伪随机数列。</li>
+</ul>
+<h4 id="2-链地址法-seperate-chaining"><a href="#2-链地址法-seperate-chaining" class="headerlink" title="2. 链地址法(seperate chaining)"></a>2. 链地址法(seperate chaining)</h4><p>将所有散列地址相同的记录都存储在一个单链表中，称为同义词子表。</p>
+<p>如图所示：</p>
+<img src="/数据结构-哈希表/seperate_chaining.jpg" alt="This is seperate chaining image" title="This is seperate chaining image">
+<p>链地址法优点：不会产生聚集现象；适合无法确定表长的情况；删除节点方便。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/数据结构-哈希表/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://limitless083.cn/数据结构-栈和队列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1792,157 +1980,6 @@ Delete: O(n)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/Linux命令-find, grep和xargs的爱恨情仇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="limitless083">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="limitless blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Linux命令-find, grep和xargs的爱恨情仇/" itemprop="url">Linux命令:find, grep和xargs的爱恨情仇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T16:20:48+08:00">
-                2017-09-13
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-13T17:11:16+08:00">
-                2017-09-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/Linux命令-find, grep和xargs的爱恨情仇/" class="leancloud_visitors" data-flag-title="Linux命令:find, grep和xargs的爱恨情仇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          find命令用来在指定目录下查找文件。
-grep命令用来正则匹配，搜索文本，找到匹配的行并打印出来。全称是global search regular expression and print out the line。
-xargs命令将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Linux命令-find, grep和xargs的爱恨情仇/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1992,7 +2029,7 @@ xargs命令将参数列表转换成小块分段传递给其他命令，以避免
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2005,7 +2042,7 @@ xargs命令将参数列表转换成小块分段传递给其他命令，以避免
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
