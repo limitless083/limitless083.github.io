@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法,数据结构," />
+  <meta name="keywords" content="LeetCode,�㷨,���ַ�," />
 
 
 
@@ -119,18 +119,22 @@
 
 
 
-<meta name="description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
-<meta name="keywords" content="算法,数据结构">
+<meta name="description" content="���������� Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2). Find the minimum element. The array may cont">
+<meta name="keywords" content="LeetCode,�㷨,���ַ�">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构-堆">
-<meta property="og:url" content="http://limitless083.cn/数据结构-堆/index.html">
+<meta property="og:title" content="LeetCode-154. Find Minimum in Rotated Sorted Array II">
+<meta property="og:url" content="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
+<meta property="og:description" content="���������� Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2). Find the minimum element. The array may cont">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-26T03:51:02.242Z">
+<meta property="og:image" content="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate1.jpg">
+<meta property="og:image" content="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate3.jpg">
+<meta property="og:image" content="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate3.jpg">
+<meta property="og:updated_time" content="2017-12-28T03:19:31.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构-堆">
-<meta name="twitter:description" content="堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。 n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &amp;lt;= k2i,ki &amp;lt;= k2i+1)或者(ki &amp;gt;= k2i,ki &amp;gt;= k2i+1), (i = 1,2,3,4…n/2) 堆的性质堆的实现是完全二叉树，实现的">
+<meta name="twitter:title" content="LeetCode-154. Find Minimum in Rotated Sorted Array II">
+<meta name="twitter:description" content="���������� Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2). Find the minimum element. The array may cont">
+<meta name="twitter:image" content="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate1.jpg">
 
 
 
@@ -160,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/数据结构-堆/"/>
+  <link rel="canonical" href="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/"/>
 
 
 
 
 
-  <title>数据结构-堆 | limitless blog</title>
+  <title>LeetCode-154. Find Minimum in Rotated Sorted Array II | limitless blog</title>
   
 
 
@@ -357,7 +361,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/数据结构-堆/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -374,7 +378,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构-堆</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-154. Find Minimum in Rotated Sorted Array II</h1>
         
 
         <div class="post-meta">
@@ -386,8 +390,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-24T17:33:11+08:00">
-                2017-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T11:18:07+08:00">
+                2017-12-28
               </time>
             
 
@@ -402,8 +406,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-26T11:51:02+08:00">
-                2017-09-26
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-28T11:19:31+08:00">
+                2017-12-28
               </time>
             
           </span>
@@ -416,7 +420,7 @@
 
           
           
-             <span id="/数据结构-堆/" class="leancloud_visitors" data-flag-title="数据结构-堆">
+             <span id="/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/" class="leancloud_visitors" data-flag-title="LeetCode-154. Find Minimum in Rotated Sorted Array II">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,64 +451,29 @@
       
 
       
-        <p>堆是计算机科学中一类特殊的数据结构的统称。堆又被称为优先队列，普通的队列是先进先出，堆是最小或最大(分别对应最小堆和最大堆)先出。</p>
-<p>n个元素序列{k1,k2…ki…kn},当且仅当满足下列关系时称之为堆：(ki &lt;= k2i,ki &lt;= k2i+1)或者(ki &gt;= k2i,ki &gt;= k2i+1), (i = 1,2,3,4…n/2)</p>
-<h3><span id="堆的性质">堆的性质</span></h3><p>堆的实现是完全二叉树，实现的堆称为二叉堆。其具有以下性质:</p>
-<ul>
-<li>父节点大于所有子节点(最大堆，大根堆)或者父节点小于所有子节点(最小堆，小根堆)</li>
-<li>堆总是一棵完全树。即除了最底层，其它层的节点都被元素填满，最底层尽可能地从左到右填入。</li>
-</ul>
-<p>应用场景重要有两个：</p>
-<ul>
-<li>堆排序</li>
-<li>优先队列</li>
-</ul>
-<h3><span id="堆的操作">堆的操作</span></h3><p>堆的操作主要有两个(其他的比如创建空堆，重构堆等操作则是辅助操作)：</p>
-<ul>
-<li>删除操作(删除操作只能删除根节点)</li>
-<li>插入操作</li>
-</ul>
-<p>这两个操作都涉及到了堆的重构，因为它们都破坏了堆的结构。本文暂时以小根堆来讲解这些操作。</p>
-<ul>
-<li>针对删除操作的重构方式：删掉根节点后，会有两个子树，将最后一个节点放到根节点的位置，然后不断的跟子节点比较，如果大于小的那个子节点，则交换两者，递归这个过程，直到下沉的节点不再大于任一子节点或者成为了叶节点。</li>
-<li>针对插入操作的重构方式：新插入的节点放在完全二叉树最后的位置（数组的末尾）。再和父节点进行比较，如果小于父节点，这父节点交换，递归调用此过程直至不小于父节点或成为根节点。</li>
-</ul>
-<h3><span id="堆的实现">堆的实现</span></h3><p>堆通常以数组的形式实现，位置k的节点的父节点的位置为k/2向下取整(可以使用右移一位表示)，而它的两个子节点的位置分别为2k和2k+1。为方便这样计数，简化计算，一般根节点是放在k=1的位置，堆的表示中不使用a[0]。</p>
-<p>具体实现代码见 <a href="https://github.com/limitless083/algorithm/blob/master/src/sort/Heap.java" target="_blank" rel="external">github</a></p>
+        <h3><span id="">����������</span></h3><blockquote>
+<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
+<p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
+<p>Find the minimum element.</p>
+<p>The array may contain duplicates.</p>
+</blockquote>
+<h3><span id="">����������</span></h3><h4><span id="1-ⷨ">1. �����ⷨ</span></h4><p>��ͷ�������飬����num[i] &lt; nums[i+1]��ֹ������nums[i]</p>
+<h4><span id="2-ַת">2. ���ַ���������ת����������</span></h4><p>��ת��������Сֵ�㵽��Сֵ��ǰһ�����Ƿǵݼ��ġ�</p>
+<p>����left/mid/right��</p>
+<h5><span id="numsmid-gt-midright">�� ��nums[mid] &gt; mid[right]</span></h5><p>��Сֵ��mid+1~right�䣬 ��ͼ��ʾ�� ��������Сֵ</p>
+<img src="/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate1.jpg" alt="rotate1.jpg" title="">
 <a id="more"></a>
-<h3><span id="总结">总结</span></h3><p>堆有两种主要操作：插入元素和删除根节点。堆一般用数组实现。</p>
-<h3><span id="扩展阅读">扩展阅读</span></h3><h4><span id="优先队列">优先队列</span></h4><p>优先队列是计算机科学中的一类抽象数据类型。优先队列中的每个元素都有各自的优先级，优先级最高的元素最先得到服务；优先级相同的元素按照其在优先队列中的顺序得到服务。优先队列往往用堆来实现。</p>
-<p>优先队列有两种实现：</p>
-<ul>
-<li>初级实现</li>
-<li>堆实现</li>
+<h5><span id="numsmid-lt-midright">�� ��nums[mid] &lt; mid[right]</span></h5><p>��Сֵ��left~mid�䣬 ��ͼ��ʾ�� ��������Сֵ</p>
+<img src="/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate3.jpg" alt="rotate3.jpg" title="">
+<h5><span id="numsmid-midright">�� ��nums[mid] == mid[right]</span></h5><ul>
+<li><p>�� nums[mid] == nums[left]: ��Сֵ����ȷ�����ģ���left++, right–</p>
+</li>
+<li><p>�� nums[mid] != nums[left]: ��Сֵ��left~mid��</p>
+</li>
 </ul>
-<p>初级实现采用有序数组或者无序数组来实现。有序数组插入操作时间复杂度为O(n)，删除操作为O(1)；无序数组插入操作时间复杂度为O(1)，删除操作为O(n)。</p>
-<p>堆实现则使插入和删除操作的时间复杂度为O(logn)。</p>
-<p>因此优先队列常使用堆来实现。</p>
-<h4><span id="堆排序">堆排序</span></h4><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。</p>
-<p>在堆的数据结构中，堆中的最大值总是位于根节点(在优先队列中使用堆的话堆中的最小值位于根节点)。堆中定义以下几种操作：</p>
-<ul>
-<li>最大堆调整（Max_Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点</li>
-<li>创建最大堆（Build_Max_Heap）：将堆所有数据重新排序</li>
-<li>堆排序（HeapSort）：移除位在第一个数据的根节点，交换到数组的末尾，并做最大堆调整的递归运算。</li>
-</ul>
-<p>具体实现代码见 <a href="https://github.com/limitless083/algorithm/blob/master/src/sort/HeapSort.java" target="_blank" rel="external">github</a></p>
-<p>性能：</p>
-<ul>
-<li>最优时间复杂度：O(nlogn)</li>
-<li>最坏时间复杂度：O(nlogn)</li>
-<li>平均时间复杂度：O(nlogn)</li>
-<li>空间复杂度: O(1)</li>
-<li>不稳定。</li>
-</ul>
-<hr>
-<p>参考：</p>
-<p><a href="http://www.cnblogs.com/vamei/archive/2013/03/20/2966612.html" target="_blank" rel="external">纸上谈兵: 堆 (heap)</a></p>
-<p><a href="https://www.youtube.com/watch?v=t0Cq6tVNRBA" target="_blank" rel="external">Youtube-堆</a></p>
-<p><a href="http://vickyqi.com/2015/11/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97%E2%80%94%E2%80%94%E5%A0%86/" target="_blank" rel="external">数据结构系列——堆</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%A0%86_(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" target="_blank" rel="external">维基百科-堆</a>)</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%84%AA%E5%85%88%E4%BD%87%E5%88%97" target="_blank" rel="external">维基百科-优先队列</a></p>
+<p>��ͼ��ʾ�� ��������Сֵ</p>
+<img src="/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate3.jpg" alt="rotate3.jpg" title="">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (nums[nums.length - <span class="number">1</span>] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[<span class="number">0</span>]; <span class="comment">// ����һ��ʼ��������</span></div><div class="line">        </div><div class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> mid = left;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</div><div class="line">            mid = left + (right - left) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span> (nums[mid] &gt; nums[right]) &#123; <span class="comment">// ��Сֵ��mid+1 ~ right ��</span></div><div class="line">                left = mid + <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; nums[right]) &#123; <span class="comment">// ��Сֵ��left~mid��</span></div><div class="line">                right = mid;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span> (nums[mid] == nums[left]) &#123; <span class="comment">// mid �� left��right���ȣ�����ȷ����Сֵ���ıߣ�����left++,right--,�Դ����ҵ���Сֵ�´����ı�</span></div><div class="line">                    left++;</div><div class="line">                    right--;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    right = mid; <span class="comment">// mid����right���ȣ�����СֵӦ��������</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> nums[mid];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -551,9 +520,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/�㷨/" rel="tag"># �㷨</a>
+          
+            <a href="/tags/���ַ�/" rel="tag"># ���ַ�</a>
           
         </div>
       
@@ -566,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Hexo中如何插入图片/" rel="next" title="Hexo中如何插入图片">
-                <i class="fa fa-chevron-left"></i> Hexo中如何插入图片
+              <a href="/位运算/" rel="next" title="位运算">
+                <i class="fa fa-chevron-left"></i> 位运算
               </a>
             
           </div>
@@ -575,10 +546,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/非比较排序算法：计数排序、基数排序和桶排序/" rel="prev" title="非比较排序算法：计数排序、基数排序和桶排序">
-                非比较排序算法：计数排序、基数排序和桶排序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -723,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">堆的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">堆的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">堆的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">优先队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">����������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">����������</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1. �����ⷨ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">2. ���ַ���������ת����������</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.1.</span> <span class="nav-text">�� ��nums[mid] > mid[right]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.</span> <span class="nav-text">�� ��nums[mid] < mid[right]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.3.</span> <span class="nav-text">�� ��nums[mid] == mid[right]</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -865,9 +832,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/数据结构-堆/';
-          this.page.identifier = '数据结构-堆/';
-          this.page.title = '数据结构-堆';
+          this.page.url = 'http://limitless083.cn/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/';
+          this.page.identifier = 'LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/';
+          this.page.title = 'LeetCode-154. Find Minimum in Rotated Sorted Array II';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';
