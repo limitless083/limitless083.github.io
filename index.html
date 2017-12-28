@@ -403,7 +403,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-28T11:19:31+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-28T14:52:57+08:00">
                 2017-12-28
               </time>
             
@@ -449,16 +449,16 @@
 
       
         
-          <h3 id="����������"><a href="#����������" class="headerlink" title="����������"></a>����������</h3><blockquote>
+          <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><blockquote>
 <p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
 <p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
 <p>Find the minimum element.</p>
 <p>The array may contain duplicates.</p>
 </blockquote>
-<h3 id="����������-1"><a href="#����������-1" class="headerlink" title="����������"></a>����������</h3><h4 id="1-�����ⷨ"><a href="#1-�����ⷨ" class="headerlink" title="1. �����ⷨ"></a>1. �����ⷨ</h4><p>��ͷ�������飬����num[i] &lt; nums[i+1]��ֹ������nums[i]</p>
-<h4 id="2-���ַ���������ת����������"><a href="#2-���ַ���������ת����������" class="headerlink" title="2. ���ַ���������ת����������"></a>2. ���ַ���������ת����������</h4><p>��ת��������Сֵ�㵽��Сֵ��ǰһ�����Ƿǵݼ��ġ�</p>
-<p>����left/mid/right��</p>
-<h5 id="��-��nums-mid-gt-mid-right"><a href="#��-��nums-mid-gt-mid-right" class="headerlink" title="�� ��nums[mid] &gt; mid[right]"></a>�� ��nums[mid] &gt; mid[right]</h5><p>��Сֵ��mid+1~right�䣬 ��ͼ��ʾ�� ��������Сֵ</p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><h4 id="1-常规解法"><a href="#1-常规解法" class="headerlink" title="1. 常规解法"></a>1. 常规解法</h4><p>从头遍历数组，遇到num[i] &lt; nums[i+1]截止，返回nums[i]</p>
+<h4 id="2-二分法，根据旋转数组性质做"><a href="#2-二分法，根据旋转数组性质做" class="headerlink" title="2. 二分法，根据旋转数组性质做"></a>2. 二分法，根据旋转数组性质做</h4><p>旋转数组从最小值点到最小值点前一个点是非递减的。</p>
+<p>分析left/mid/right：</p>
+<h5 id="①-若nums-mid-gt-mid-right"><a href="#①-若nums-mid-gt-mid-right" class="headerlink" title="① 若nums[mid] &gt; mid[right]"></a>① 若nums[mid] &gt; mid[right]</h5><p>最小值在mid+1~right间， 如图所示， △代表最小值</p>
 <img src="/LeetCode-154-Find-Minimum-in-Rotated-Sorted-Array-II/rotate1.jpg" alt="rotate1.jpg" title="">
           <!--noindex-->
           <div class="post-button text-center">
@@ -1995,7 +1995,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
