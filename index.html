@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/矩阵中的路径/">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/矩阵中的路径、机器人的运动范围/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limitless083">
@@ -375,7 +375,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/矩阵中的路径/" itemprop="url">矩阵中的路径</a></h1>
+                <a class="post-title-link" href="/矩阵中的路径、机器人的运动范围/" itemprop="url">矩阵中的路径、机器人的运动范围</a></h1>
         
 
         <div class="post-meta">
@@ -403,8 +403,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-05T23:55:38+08:00">
-                2018-01-05
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-06T00:12:26+08:00">
+                2018-01-06
               </time>
             
           </span>
@@ -417,7 +417,7 @@
 
           
           
-             <span id="/矩阵中的路径/" class="leancloud_visitors" data-flag-title="矩阵中的路径">
+             <span id="/矩阵中的路径、机器人的运动范围/" class="leancloud_visitors" data-flag-title="矩阵中的路径、机器人的运动范围">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,12 +449,13 @@
 
       
         
-          <h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bcced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p>
-<h4 id="二、思路"><a href="#二、思路" class="headerlink" title="二、思路"></a>二、思路</h4><p>利用回溯。任意一个点都可以进入，因此需要两个循环遍历每一个点。</p>
+          <h3 id="一、矩阵中的路径"><a href="#一、矩阵中的路径" class="headerlink" title="一、矩阵中的路径"></a>一、矩阵中的路径</h3><h4 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h4><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bcced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p>
+<h4 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h4><p>利用回溯。任意一个点都可以进入，因此需要两个循环遍历每一个点。</p>
 <p>每一个点都可以上下左右的挪动，当遇到不满足的时候就回溯。</p>
+<h4 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>[] visited;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPath</span><span class="params">(<span class="keyword">char</span>[] matrix, <span class="keyword">int</span> rows, <span class="keyword">int</span> cols, <span class="keyword">char</span>[] str)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (str == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span> (rows &lt; <span class="number">0</span> || cols &lt; <span class="number">0</span> || matrix == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    	visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[matrix.length];</div><div class="line">    	</div><div class="line">    	<span class="comment">// 注意这里，每个点都可以进入</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</div><div class="line">                <span class="comment">// 进入某个点前先判断是否和开头匹配</span></div><div class="line">                <span class="keyword">if</span> (str[<span class="number">0</span>] == matrix[i*cols+j] &amp;&amp; backtracking(matrix, rows, cols, i, j, <span class="number">0</span>, str)) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">char</span>[] matrix, <span class="keyword">int</span> rows, <span class="keyword">int</span> cols, <span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> index, <span class="keyword">char</span>[] str)</span> </span>&#123;</div><div class="line">        <span class="comment">// 满足条件输出</span></div><div class="line">        <span class="keyword">if</span> (index &gt;= str.length) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="comment">// 到达临界条件</span></div><div class="line">        <span class="keyword">if</span> (i &gt;= rows || j &gt;= cols || i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || matrix[i*cols + j] != str[index] || visited[i*cols+j]) &#123;</div><div class="line">          <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// matrix[i*cols+j] = str[index]</span></div><div class="line">        visited[i*cols+j] = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span> (</div><div class="line">            backtracking(matrix, rows, cols, i+<span class="number">1</span>, j, index + <span class="number">1</span>, str) ||</div><div class="line">            backtracking(matrix, rows, cols, i-<span class="number">1</span>, j, index + <span class="number">1</span>, str) ||</div><div class="line">            backtracking(matrix, rows, cols, i, j-<span class="number">1</span>, index + <span class="number">1</span>, str) ||</div><div class="line">            backtracking(matrix, rows, cols, i, j+<span class="number">1</span>, index + <span class="number">1</span>, str)) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        visited[i*cols+j] = <span class="keyword">false</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/矩阵中的路径/#more" rel="contents">
+            <a class="btn" href="/矩阵中的路径、机器人的运动范围/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

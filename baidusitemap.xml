@@ -4,11 +4,11 @@
 
     
   <url>
-    <loc>http://limitless083.cn/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</loc>
-    <lastmod>2018-01-05T15:55:38.330Z</lastmod>
+    <loc>http://limitless083.cn/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E3%80%81%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</loc>
+    <lastmod>2018-01-05T16:12:26.184Z</lastmod>
     <data>
         <display>
-        <title>矩阵中的路径</title>
+        <title>矩阵中的路径、机器人的运动范围</title>
         <pubTime>2018-01-05T15:55:03.000Z</pubTime>
         
         <tag>算法</tag>
@@ -247,9 +247,9 @@
         
         <tag>算法</tag>
          
-        <tag>LintCode</tag>
-         
         <tag>动态规划</tag>
+         
+        <tag>LintCode</tag>
          
          
            
