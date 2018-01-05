@@ -356,6 +356,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="limitless083">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="limitless blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/" itemprop="url">前序遍历、中序遍历、后序遍历的递归和非递归实现方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T23:59:27+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T23:59:56+08:00">
+                2017-10-18
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/" class="leancloud_visitors" data-flag-title="前序遍历、中序遍历、后序遍历的递归和非递归实现方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>二叉树有4种遍历方式：前序遍历、中序遍历、后序遍历和后序遍历方式。</p>
+<p>前序遍历、中序遍历、后序遍历是深度优先搜索，适合用递归方式和栈实现。</p>
+<p>层次遍历是广度优先搜索，适合用队列实现。</p>
+<p>树的结点：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Node &#123;</div><div class="line">    <span class="keyword">int</span> data;</div><div class="line">    Node left, right;</div><div class="line">    Node(<span class="keyword">int</span> data) &#123;</div><div class="line">        <span class="keyword">this</span>.data = data;</div><div class="line">        left = right = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="一、前序遍历"><a href="#一、前序遍历" class="headerlink" title="一、前序遍历"></a>一、前序遍历</h3><blockquote>
+<p>root -&gt; left_child -&gt; right_child</p>
+</blockquote>
+<h4 id="递归方式："><a href="#递归方式：" class="headerlink" title="递归方式："></a>递归方式：</h4><ul>
+<li>访问根节点</li>
+<li>访问<code>左子树</code></li>
+<li>访问<code>右子树</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recursivePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    System.out.println(root.data);</div><div class="line">    recursivePreorder(root.left);</div><div class="line">    recursivePreorder(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="非递归方式："><a href="#非递归方式：" class="headerlink" title="非递归方式："></a>非递归方式：</h4><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><ol>
+<li><p>push左子树直到叶子节点，边push边遍历</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">    System.out.println(p.data);</div><div class="line">    stack.push(p);</div><div class="line">    p = p.left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当Stack不为空时，弹出栈，若该节点有右子树，则push右子树的左子树直到叶子节点。重复1,2（根节点-&gt;遍历左子树-&gt;遍历右子树）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p = stack.pop();</div><div class="line">p = p.right;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    ArrayDeque&lt;Node&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    Node p = root;</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty() || p != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// 边push边遍历，之后要借助push进来的节点到右子树上</span></div><div class="line">            System.out.println(p.data);</div><div class="line">            stack.push(p);</div><div class="line">            p = p.left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        p = stack.pop();</div><div class="line">        p = p.right;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><p>利用栈具有First-In-Last-Out的特点。</p>
+<p>过程：循环{ pop出节点后，先push当前节点的右节点，再push当前节点的左节点 }。</p>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    Node p = <span class="keyword">null</span>;</div><div class="line">    stack.push(root);</div><div class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">        p = stack.pop();</div><div class="line">        System.out.println(p.data);</div><div class="line">        <span class="keyword">if</span> (p.right != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p.right);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (p.left != <span class="keyword">null</span>) &#123;</div><div class="line">            stack.push(p.left);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/前序遍历、中序遍历、后序遍历的递归和非递归实现方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://limitless083.cn/Windows-Server-2016-计划任务优先级更改方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1835,162 +2008,6 @@ Delete: O(n)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/Hexo中如何插入图片/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="limitless083">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="limitless blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Hexo中如何插入图片/" itemprop="url">Hexo中如何插入图片</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T00:39:35+08:00">
-                2017-09-21
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-09-21T01:00:03+08:00">
-                2017-09-21
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/Hexo中如何插入图片/" class="leancloud_visitors" data-flag-title="Hexo中如何插入图片">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Hexo有多种方式插入图片，以下讲解其中三种方式。</p>
-<h3 id="一、通过Markdown语法引用"><a href="#一、通过Markdown语法引用" class="headerlink" title="一、通过Markdown语法引用"></a>一、通过Markdown语法引用</h3><p>将图片 example.jpg 放在 source/images 目录下，在文章的md文件中插入 <code>![](/images/example.jpg)</code> 即可。</p>
-<p>这种方法针对的是在hexo整个项目中有少量的图片的情况，且 <code>_config.yml</code> 中 <code>post_asset_folder</code> 必须为 <code>false</code> 才能引用。</p>
-<h3 id="二、通过标签插件引用"><a href="#二、通过标签插件引用" class="headerlink" title="二、通过标签插件引用"></a>二、通过标签插件引用</h3><p>在hexo3中，新的标签插件被加入到了核心代码里，此时可以采用标签插件引用来插入图片，这样的好处在于图片资源管理较为方便。</p>
-<p>设置<code>_config.yml</code> 中 <code>post_asset_folder</code> 为 <code>true</code> 可以使每一次<code>hexo new post postname</code>都创建一个postname的文件夹和postname.md的文件。</p>
-<p>把图片 example.jpg 放到postname文件夹中，然后在md文件里使用下面方式引用：</p>
-
-{% asset_img example.jpg This is an example image %}
-
-<h3 id="三、CDN引用"><a href="#三、CDN引用" class="headerlink" title="三、CDN引用"></a>三、CDN引用</h3><p>将图片上传到一些免费的CDN服务中。上传完图片后会生成对应的url，直接引用url即可插入图片。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Hexo中如何插入图片/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2040,7 +2057,7 @@ Delete: O(n)
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
