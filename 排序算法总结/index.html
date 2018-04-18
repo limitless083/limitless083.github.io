@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="后台, 算法, 运维, Erlang, Java, Linux" />
+  <meta name="keywords" content="算法,排序," />
 
 
 
@@ -119,17 +119,30 @@
 
 
 
-<meta name="description" content="学而不思则罔，思而不学则殆。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://limitless083.cn/tags/index.html">
+<meta name="description" content="排序算法[TOC]  参考资料 八大排序算法Java-CSDN 各种排序算法总结-简书  简介排序有内部排序和外部排序  内部排序是数据记录在内存中进行排序。 外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。   常说的八大排序是内部排序。 分类 选择排序 简单选择排序 堆排序   插入排序 直接插入排序 希尔排序   交换排序 冒泡排序 快速排序   归并排序">
+<meta name="keywords" content="算法,排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法总结">
+<meta property="og:url" content="http://limitless083.cn/排序算法总结/index.html">
 <meta property="og:site_name" content="limitless blog">
-<meta property="og:description" content="学而不思则罔，思而不学则殆。">
+<meta property="og:description" content="排序算法[TOC]  参考资料 八大排序算法Java-CSDN 各种排序算法总结-简书  简介排序有内部排序和外部排序  内部排序是数据记录在内存中进行排序。 外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。   常说的八大排序是内部排序。 分类 选择排序 简单选择排序 堆排序   插入排序 直接插入排序 希尔排序   交换排序 冒泡排序 快速排序   归并排序">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T15:02:58.521Z">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201207/17/1342514529_5795.jpg">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201207/17/1342520948_8667.jpg">
+<meta property="og:image" content="http://img2.shangxueba.com/img/2cto_kfImg/20140528/15/5EB0D3DB432D717F22E7FD51A349DE4A.jpg">
+<meta property="og:image" content="http://s8.51cto.com/wyfs02/M02/19/FF/wKiom1MUSRPjUTOIAAC-kWvhNhc591.jpg">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201207/21/1342842633_6751.jpg">
+<meta property="og:image" content="http://img.blog.csdn.net/20160527162746111">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1216886/201710/1216886-20171016205125521-1228601863.jpg">
+<meta property="og:image" content="http://img.blog.csdn.net/20150928125638007">
+<meta property="og:image" content="http://img.blog.csdn.net/20150928125646949">
+<meta property="og:image" content="http://img.blog.csdn.net/20150929092136858">
+<meta property="og:updated_time" content="2018-04-18T03:53:01.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="学而不思则罔，思而不学则殆。">
+<meta name="twitter:title" content="排序算法总结">
+<meta name="twitter:description" content="排序算法[TOC]  参考资料 八大排序算法Java-CSDN 各种排序算法总结-简书  简介排序有内部排序和外部排序  内部排序是数据记录在内存中进行排序。 外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。   常说的八大排序是内部排序。 分类 选择排序 简单选择排序 堆排序   插入排序 直接插入排序 希尔排序   交换排序 冒泡排序 快速排序   归并排序">
+<meta name="twitter:image" content="http://img.my.csdn.net/uploads/201207/17/1342514529_5795.jpg">
 
 
 
@@ -159,13 +172,13 @@
 
 
 
-  <link rel="canonical" href="http://limitless083.cn/tags/"/>
+  <link rel="canonical" href="http://limitless083.cn/排序算法总结/"/>
 
 
 
 
 
-  <title>tags | limitless blog</title>
+  <title>排序算法总结 | limitless blog</title>
   
 
 
@@ -344,40 +357,435 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limitless083.cn/排序算法总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="limitless083">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="limitless blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 21 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Hexo/" style="font-size: 14.57px; color: #b1b1b1">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 27.43px; color: #2c2c2c">LeetCode</a> <a href="/tags/LintCode/" style="font-size: 17.14px; color: #979797">LintCode</a> <a href="/tags/LintCode-算法/" style="font-size: 12px; color: #ccc">LintCode. 算法</a> <a href="/tags/Linux/" style="font-size: 17.14px; color: #979797">Linux</a> <a href="/tags/Windows/" style="font-size: 12px; color: #ccc">Windows</a> <a href="/tags/二分法/" style="font-size: 12px; color: #ccc">二分法</a> <a href="/tags/位运算/" style="font-size: 12px; color: #ccc">位运算</a> <a href="/tags/动态规划/" style="font-size: 22.29px; color: #616161">动态规划</a> <a href="/tags/双指针/" style="font-size: 12px; color: #ccc">双指针</a> <a href="/tags/回溯/" style="font-size: 17.14px; color: #979797">回溯</a> <a href="/tags/图/" style="font-size: 14.57px; color: #b1b1b1">图</a> <a href="/tags/排序/" style="font-size: 12px; color: #ccc">排序</a> <a href="/tags/数据结构/" style="font-size: 24.86px; color: #464646">数据结构</a> <a href="/tags/数组/" style="font-size: 12px; color: #ccc">数组</a> <a href="/tags/数论/" style="font-size: 12px; color: #ccc">数论</a> <a href="/tags/机器学习/" style="font-size: 19.71px; color: #7c7c7c">机器学习</a> <a href="/tags/树/" style="font-size: 12px; color: #ccc">树</a> <a href="/tags/算法/" style="font-size: 30px; color: #111">算法</a> <a href="/tags/贪婪法/" style="font-size: 12px; color: #ccc">贪婪法</a> <a href="/tags/链表/" style="font-size: 12px; color: #ccc">链表</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">排序算法总结</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T11:51:45+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-18T11:53:01+08:00">
+                2018-04-18
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/排序算法总结/" class="leancloud_visitors" data-flag-title="排序算法总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1><span id="排序算法">排序算法</span></h1><p>[TOC]</p>
+<hr>
+<h3><span id="参考资料">参考资料</span></h3><ul>
+<li><a href="http://blog.csdn.net/Happy_wu/article/details/51841244" target="_blank" rel="external">八大排序算法Java-CSDN</a></li>
+<li><a href="https://www.jianshu.com/p/f5baf7f27a7e" target="_blank" rel="external">各种排序算法总结-简书</a></li>
+</ul>
+<h3><span id="简介">简介</span></h3><p>排序有内部排序和外部排序</p>
+<ul>
+<li><strong>内部排序</strong>是数据记录在内存中进行排序。</li>
+<li><strong>外部排序</strong>是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。 </li>
+</ul>
+<p>常说的八大排序是内部排序。</p>
+<h3><span id="分类">分类</span></h3><ul>
+<li>选择排序<ul>
+<li>简单选择排序</li>
+<li>堆排序</li>
+</ul>
+</li>
+<li>插入排序<ul>
+<li>直接插入排序</li>
+<li>希尔排序</li>
+</ul>
+</li>
+<li>交换排序<ul>
+<li>冒泡排序</li>
+<li>快速排序</li>
+</ul>
+</li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201207/17/1342514529_5795.jpg" alt="image"></p>
+<hr>
+<h3><span id="算法复杂度与稳定性">算法复杂度与稳定性</span></h3><table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>平均复杂度</th>
+<th>最坏复杂度</th>
+<th>最好复杂度</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单选择</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>直接插入</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>冒泡</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快排</td>
+<td>O(nlogn)</td>
+<td>O(n^2)</td>
+<td>O(nlogn)</td>
+<td>O(logn)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>归并</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(n)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>堆排</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n^1.5)</td>
+<td>O(n^2)</td>
+<td>O(n^1.3)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td><code>O(d*(n+r))</code></td>
+<td><code>O(d*(n+r))</code></td>
+<td><code>O(d*(n+r))</code></td>
+<td><code>O(n+r)</code></td>
+<td>稳定</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="稳定算法">稳定算法</span></h3><ul>
+<li>直接插入，冒泡，归并，基数</li>
+</ul>
+<hr>
+<h3><span id="简单选择排序">简单选择排序</span></h3><p>在要排序的数组中选出最小的一个数，和第1个位置交换，在剩下的选最小的，和第2个交换，一直到最后一个。（选最大同）</p>
+<p>示例：</p>
+<p><img src="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png" alt="image"></p>
+<ul>
+<li>比较次数都是<code>n(n-1)/2</code></li>
+<li>移动次数，最好有序 0 次，最坏第一个最大，后面有序<code>3(n-1)</code>，<code>n-1</code>次交换，每次交换移动3次</li>
+<li>时间复杂度都是O(n^2)，空间O(1)</li>
+<li>不稳定</li>
+</ul>
+<h3><span id="直接插入排序">直接插入排序</span></h3><p>先将第一个元素作为有序，依次将后面的元素插入到有序序列中合适的位置，插入过程是不断向前移动的。</p>
+<p><img src="http://img.my.csdn.net/uploads/201207/17/1342520948_8667.jpg" alt="image"></p>
+<ul>
+<li>时间复杂度O(n^2)，最好有序O(n)，最坏反序移动<code>n(n-1)/2</code>次，O(n^2)</li>
+<li>空间复杂度O(1)</li>
+<li>算法稳定，遇到相等的元素不移动</li>
+</ul>
+<h3><span id="冒泡排序">冒泡排序</span></h3><p>依次将相邻元素比较，大的向后交换，一趟完成后最大数在最后，继续完成前n-i个相邻比较，以此类推。</p>
+<p><img src="http://img2.shangxueba.com/img/2cto_kfImg/20140528/15/5EB0D3DB432D717F22E7FD51A349DE4A.jpg" alt="image"></p>
+<p>优化：</p>
+<ul>
+<li><p>记录最后一次交换位置pos</p>
+</li>
+<li><p>时间复杂度<code>O(n^2)</code>，最好有序<code>O(n)</code>，最坏反序<code>O(n^2)</code></p>
+</li>
+<li>空间复杂度O(1)</li>
+<li>算法稳定，相邻相等不交换</li>
+</ul>
+<h3><span id="快速排序">快速排序</span></h3><p>每次将数组分成两部分，前一部分所有元素都小于后一部分，依次对各部分再次快排，直到结束。</p>
+<p>思路：</p>
+<ol>
+<li>选择第一个元素为<code>key=A[0]</code></li>
+<li>设置两个指针，<code>i=0, j=N-1</code></li>
+<li>从后向前搜索<code>j--</code>，找到<code>A[j]&lt;key</code>，和<code>A[i]</code>交换</li>
+<li>然后从前向后搜索<code>i++</code>，找到<code>A[i]&gt;key</code>，和<code>A[j]</code>交换</li>
+<li>重复3 4，直到<code>i&gt;=j</code>结束</li>
+<li>步骤3,4,5是一趟，然后对分成的两部分再次快排，直到结束</li>
+</ol>
+<p><img src="http://s8.51cto.com/wyfs02/M02/19/FF/wKiom1MUSRPjUTOIAAC-kWvhNhc591.jpg" alt="image"></p>
+<ul>
+<li>时间复杂度平均<code>O(nlogn)</code>，最坏<code>O(n^2)</code>，每次划分出<code>n-1</code>和<code>1</code>个，相当于冒泡，最好<code>O(nlogn)</code>，每次划分<code>n/2</code></li>
+<li>空间复杂度最好<code>O(logn)</code>，最坏<code>O(n)</code>，递归调用占用</li>
+<li>算法不稳定，利用辅助数组可实现稳定</li>
+</ul>
+<h3><span id="归并排序">归并排序</span></h3><p>分治策略，不断拆分成子序列，一直到子序列有序，再不断合并成有序子序列，直到全部有序</p>
+<p>合并过程需要辅助空间，先申请一个两个子序列之和大小的空间，然后每个子序列一个指针i,j，依次比较移动，放入新申请的空间</p>
+<p><img src="http://img.my.csdn.net/uploads/201207/21/1342842633_6751.jpg" alt="image"></p>
+<p><img src="http://img.blog.csdn.net/20160527162746111" alt="image"></p>
+<p>分而治之(divide - conquer)<br>每个递归过程涉及三个步骤：</p>
+<ul>
+<li>分解: 把待排序的 n 个元素的序列分解成两个子序列, 每个子序列包括 n/2 个元素</li>
+<li>治理: 对每个子序列分别调用归并排序MergeSort, 进行递归操作</li>
+<li>合并: 合并两个排好序的子序列,生成排序结果</li>
+</ul>
+<p><img src="https://images2017.cnblogs.com/blog/1216886/201710/1216886-20171016205125521-1228601863.jpg" alt="image"></p>
+<p><a href="https://www.cnblogs.com/of-fanruice/p/7678801.html" target="_blank" rel="external">Java实现归并排序</a></p>
+<p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">public static int[] sort(int[] a,int low,int high)&#123;</div><div class="line">        int mid = (low+high)/2;</div><div class="line">        if(low&lt;high)&#123;</div><div class="line">            sort(a,low,mid);</div><div class="line">            sort(a,mid+1,high);</div><div class="line">            //左右归并</div><div class="line">            merge(a,low,mid,high);</div><div class="line">        &#125;</div><div class="line">        return a;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    public static void merge(int[] a, int low, int mid, int high) &#123;</div><div class="line">        int[] temp = new int[high-low+1];</div><div class="line">        int i= low;</div><div class="line">        int j = mid+1;</div><div class="line">        int k=0;</div><div class="line">        // 把较小的数先移到新数组中</div><div class="line">        while(i&lt;=mid &amp;&amp; j&lt;=high)&#123;</div><div class="line">            if(a[i]&lt;a[j])&#123;</div><div class="line">                temp[k++] = a[i++];</div><div class="line">            &#125;else&#123;</div><div class="line">                temp[k++] = a[j++];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        // 把左边剩余的数移入数组 </div><div class="line">        while(i&lt;=mid)&#123;</div><div class="line">            temp[k++] = a[i++];</div><div class="line">        &#125;</div><div class="line">        // 把右边边剩余的数移入数组</div><div class="line">        while(j&lt;=high)&#123;</div><div class="line">            temp[k++] = a[j++];</div><div class="line">        &#125;</div><div class="line">        // 把新数组中的数覆盖nums数组</div><div class="line">        for(int x=0;x&lt;temp.length;x++)&#123;</div><div class="line">            a[x+low] = temp[x];</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度：O(nlogn)，进行logn趟二路归并，每趟时间O(n)</li>
+<li>空间复杂度：O(n)，辅助空间，不是就地排序</li>
+<li>算法稳定</li>
+</ul>
+<p><strong>单链表-归并</strong></p>
+<ul>
+<li>设置两个指针，一个步长为1， 一个步长为2，当快指针到达尾结点时，慢指针指向中间结点，时间复杂度为O(N)；</li>
+<li>平分为左链表L1和右链表L2，递归分裂，直到链表为空或者只有一个结点；</li>
+<li>将链表L2的每个结点插入到链表L1中，时间复杂度为O(m+n)，m、n分别为两条链表的长度。（合并两个有序链表）</li>
+</ul>
+<p>画出递归树，可知总的时间复杂度为O(N * lgN)</p>
+<h3><span id="堆排序">堆排序</span></h3><p>堆用一维数组来表示就是完全二叉树，且所有非叶节点的值都大于或等于其子女的值，根节点是最大值（最大堆）。</p>
+<p><strong>堆排思想</strong></p>
+<ol>
+<li>构建堆，将n个无序数组调整为堆，升序最大堆，降序最小堆</li>
+<li>将堆顶元素（最大值）与数组倒数第i个元素交换，调整前n-i个元素为最大堆</li>
+<li>依次重复步骤2，直到数组有序</li>
+</ol>
+<p>参考：<br><a href="https://www.cnblogs.com/chengxiao/p/6129630.html" target="_blank" rel="external">图解排序算法(三)之堆排序</a></p>
+<ul>
+<li>父节点(i-1)/2</li>
+<li>左子节点2i+1</li>
+<li>右子节点2i+2</li>
+</ul>
+<p><strong>构建堆的过程</strong><br>从倒数第一个非叶子节点开始，索引是<code>length/2</code>，如果比父节点大，就交换，一直向上比较。依次对每个非叶子节点执行Shift-Up</p>
+<p><strong>交换后重建过程</strong><br>只需要调整堆顶元素，Shift-Down，如果比左右子节点小，则和较大的子节点交换，一直向下比较</p>
+<ul>
+<li>时间复杂度O(nlogn)，建堆过程O(n)，重建过程O(logn)，外层O(n)，最好最坏情况都是O(nlogn)</li>
+<li>空间复杂度O(1)，原地排序</li>
+<li>算法不稳定</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/20729324" target="_blank" rel="external">堆排序中建堆过程时间复杂度O(n)怎么来的? - 知乎</a></p>
+<h3><span id="希尔排序">希尔排序</span></h3><p>希尔排序是插入排序的优化版，是按一定的增量一次分组进行直接插入排序，直到增量变为1，分成一组，全部调整为有序。优化点在于减少了直接插入的移动次数。</p>
+<p>一般选择的增量序列是：<code>n/2, n/4, n/8, ... , 1</code>，希尔增量，不是最优的。</p>
+<p><a href="http://www.cnblogs.com/chengxiao/p/6104371.html" target="_blank" rel="external">图解排序算法(二)之希尔排序</a></p>
+<ul>
+<li>时间复杂度，和增量选择有关，最优<code>O(n^1.3)</code>，最差<code>O(n^2)</code></li>
+<li>空间复杂度，O(1)</li>
+<li>算法不稳定，各自分组插入会乱序</li>
+</ul>
+<h3><span id="基数排序计数排序">基数排序（计数排序）</span></h3><p>不进行关键字的比较,而是利用”分配”和”收集”。</p>
+<p>将根据整数的最右边数字将其扔进相应的0~9号的篮子里，对于相同的数字要保持其原来的相对顺序（确保排序算法的稳定性），然后将篮子里的数如图所示的串起来，然后再进行第二趟的收集（按照第二位的数字进行收集），就这样不断的反复，当没有更多的位时，串起来的数字就是排好序的数字。</p>
+<p><img src="http://img.blog.csdn.net/20150928125638007" alt="image"></p>
+<p><img src="http://img.blog.csdn.net/20150928125646949" alt="image"></p>
+<p><a href="https://www.cnblogs.com/ECJTUACM-873284962/p/6935506.html" target="_blank" rel="external">基数排序与桶排序，计数排序【详解】</a></p>
+<ul>
+<li>时间复杂度，平均最好最差都是O(d*(n+r))，不需要比较</li>
+<li>空间复杂度，O(n+r)</li>
+</ul>
+<p>其中，d 为位数，r 为基数，n 为原数组个数。 </p>
+<h3><span id="计数排序">计数排序</span></h3><p>计数排序的核心思想是，构建一个足够大的数组 hashArray[]，数组大小需要保证能够把所有元素都包含在这个数组上。元素的值为hashArray索引，<code>hashArray[nums[i]]</code>为数字出现次数。最后再按索引排，取出非零。</p>
+<p><a href="http://blog.csdn.net/lemon_tree12138/article/details/51695211" target="_blank" rel="external">排序算法系列：基数排序</a></p>
+<ul>
+<li>空间需求很大，和数的范围有关</li>
+<li>时间复杂度为Ο(n+k)（其中k是整数的范围）</li>
+</ul>
+<h3><span id="桶排序">桶排序</span></h3><p>桶排序的基本思想是将一个数据表分割成许多buckets，然后每个bucket各自排序，或用不同的排序算法，或者递归的使用bucket sort算法。也是典型的divide-and-conquer分而治之的策略。它是一个分布式的排序。</p>
+<p>基本流程：</p>
+<ul>
+<li>建立一堆buckets； </li>
+<li>遍历原始数组，并将数据放入到各自的buckets当中； </li>
+<li>对非空的buckets进行排序； </li>
+<li>按照顺序遍历这些buckets并放回到原始数组中即可构成排序后的数组。</li>
+</ul>
+<p>图示：<br><img src="http://img.blog.csdn.net/20150929092136858" alt="image"></p>
+<p><a href="https://www.cnblogs.com/ECJTUACM-873284962/p/6935506.html" target="_blank" rel="external">基数排序与桶排序，计数排序【详解】</a><br>（厉害了这网页带点击出现核心价值观特效，而且很萌很二次元）</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢您的支持！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="limitless083 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="limitless083 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/排序/" rel="tag"># 排序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/LeetCode-Trapping-Rain-Water系列/" rel="next" title="LeetCode-Trapping Rain Water系列">
+                <i class="fa fa-chevron-left"></i> LeetCode-Trapping Rain Water系列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -417,8 +825,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">limitless083</p>
@@ -484,6 +901,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">算法复杂度与稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">稳定算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">基数排序（计数排序）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">计数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">桶排序</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -598,6 +1031,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -616,9 +1053,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://limitless083.cn/tags/index.html';
-          this.page.identifier = 'tags/index.html';
-          this.page.title = 'tags';
+          this.page.url = 'http://limitless083.cn/排序算法总结/';
+          this.page.identifier = '排序算法总结/';
+          this.page.title = '排序算法总结';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://limitless083.disqus.com/embed.js';
